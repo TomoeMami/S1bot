@@ -20,9 +20,9 @@ if __name__ == '__main__':
                     if '管家代转' not in summary and '运营代转' not in summary:
                         msg = msg + idict[uid] +':' + summary +'\n\n'
                         qqmsg.append({"type":"Plain", "text":str(link)})
-                        tempmsg = re.sub(r'\[.+?\]','',msg)
+                        tempmsg = re.sub(r'\[.+?\]','',summary)
                         qqmsg.append({"type":"Plain", "text":str(tempmsg)})
-                        qqmsg-img = re.findall(r'\[img\](.*?)\[/img\]',msg)
+                        qqmsg-img = re.findall(r'\[img\](.*?)\[/img\]',summary)
                         if(len(qqmsg-img)!=0):
                             for i in qqmsg-img:
                                 qqmsg.append({"type":"Image", "url":str(i)})
@@ -31,9 +31,9 @@ if __name__ == '__main__':
                     summary = NewData[uid]['douyin'][link]
                     msg = msg + idict[uid] +':'+ summary +'\n\n'
                     qqmsg.append({"type":"Plain", "text":str(link)})
-                    tempmsg = re.sub(r'\[.+?\]','',msg)
+                    tempmsg = re.sub(r'\[.+?\]','',summary)
                     qqmsg.append({"type":"Plain", "text":str(tempmsg)})
-                    qqmsg-img = re.findall(r'\[img\](.*?)\[/img\]',msg)
+                    qqmsg-img = re.findall(r'\[img\](.*?)\[/img\]',summary)
                     if(len(qqmsg-img)!=0):
                         for i in qqmsg-img:
                             qqmsg.append({"type":"Image", "url":str(i)})
