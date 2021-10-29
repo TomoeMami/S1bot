@@ -9,6 +9,7 @@ idict = {'672346917':'[b][color=#9Ac8E2]向晚大魔王[/color][/b]','703007996'
 
 if __name__ == '__main__':
     msg = u''
+    qqmsg = []
     with open ('./New.json',"r",encoding='utf-8') as f:
         NewData = json.load(f)
     for uid in NewData.keys():
@@ -18,10 +19,24 @@ if __name__ == '__main__':
                     summary = NewData[uid]['bili'][link]
                     if '管家代转' not in summary and '运营代转' not in summary:
                         msg = msg + idict[uid] +':' + summary +'\n\n'
+                        qqmsg.append({"type":"Plain", "text":str(link)})
+                        tempmsg = re.sub(r'\[.+?\]','',msg)
+                        qqmsg.append({"type":"Plain", "text":str(tempmsg)})
+                        qqmsg-img = re.findall(r'\[img\](.*?)\[/img\]',msg)
+                        if(len(qqmsg-img)!=0):
+                            for i in qqmsg-img:
+                                qqmsg.append({"type":"Image", "url":str(i)})
             if name == 'douyin':
                 for link in NewData[uid]['douyin'].keys():
                     summary = NewData[uid]['douyin'][link]
                     msg = msg + idict[uid] +':'+ summary +'\n\n'
+                    qqmsg.append({"type":"Plain", "text":str(link)})
+                    tempmsg = re.sub(r'\[.+?\]','',msg)
+                    qqmsg.append({"type":"Plain", "text":str(tempmsg)})
+                    qqmsg-img = re.findall(r'\[img\](.*?)\[/img\]',msg)
+                    if(len(qqmsg-img)!=0):
+                        for i in qqmsg-img:
+                            qqmsg.append({"type":"Image", "url":str(i)})
     if msg:
         while 1:
             sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='utf8') #改变标准输出的默认编码
@@ -56,6 +71,9 @@ if __name__ == '__main__':
                 Data = {'formhash': formhash,'message': msg,'subject': subject,'posttime':int(time.time()),'wysiwyg':1,'usesig':1}
                 req = requests.post(replyurl,data=Data,headers=headers,cookies=cookies)
                 print(req)
+                qqurl = 'http://127.0.0.1:1314'
+                qqdata = {'type' : 'ReplyPush','msg':qqmsg}
+                qqreq = requests.post(qqurl,json=qqdata)
                 New = {}
                 with open ('./New.json',"w",encoding='utf-8') as f:
                     f.write(json.dumps(New,indent=2,ensure_ascii=False))
