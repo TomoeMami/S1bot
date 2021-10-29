@@ -30,13 +30,13 @@ async def get_bili(uid,dynamics):
     u = user.User(int(uid))
     offset = 0
     page = await u.get_dynamics(offset)
-    live = await u.get_live_info()
-    if live['liveStatus'] != LiveData[uid] and live['liveStatus'] == 1:
-        liveurl = live['url']
-        livetitle = live['title']
-        pics = await post_pics(live['cover'])
-        New[uid]['bili'][liveurl]= '[b]开始直播了 -> [url='+liveurl+']'+ livetitle +'[/url][/b]\n'+ pics 
-    LiveData[uid] = live['liveStatus']
+    # live = await u.get_live_info()
+    # if live['liveStatus'] != LiveData[uid] and live['liveStatus'] == 1:
+    #     liveurl = live['url']
+    #     livetitle = live['title']
+    #     pics = await post_pics(live['cover'])
+    #     New[uid]['bili'][liveurl]= '[b]开始直播了 -> [url='+liveurl+']'+ livetitle +'[/url][/b]\n'+ pics
+    # LiveData[uid] = live['liveStatus']
     if 'cards' in page:
         data.extend(page['cards'])
     for sdata in data:
@@ -53,7 +53,7 @@ async def get_bili(uid,dynamics):
                         #发布视频
                         dynamics[uid][link]['title'] = sdata['card']['title']
                         pics =await  post_pics(sdata['card']['pic'])
-                        dynamics[uid][link]['summary'] = '[quote]' +sdata['card']['desc']+'\n'+pics+'[/quote]' 
+                        dynamics[uid][link]['summary'] = '[quote]' +sdata['card']['desc']+'\n'+pics+'[/quote]'
                     elif 'origin' in sdata['card'].keys():
                         #转发
                         origindyna = json.loads(sdata['card']['origin'])
@@ -88,7 +88,7 @@ async def get_bili(uid,dynamics):
                             dynamics[uid][link]['summary'] = '[quote]' +sdata['card']['item']['description']
                             for i in sdata['card']['item']['pictures']:
                                 pics = await post_pics(i['img_src'])
-                                dynamics[uid][link]['summary'] = dynamics[uid][link]['summary'] + '\n'+ pics 
+                                dynamics[uid][link]['summary'] = dynamics[uid][link]['summary'] + '\n'+ pics
                             dynamics[uid][link]['summary'] = dynamics[uid][link]['summary'] +'[/quote]'
                         else:
                             dynamics[uid][link]['summary'] = '[quote]' + sdata['card']['item']['content']+'[/quote]'
@@ -98,9 +98,9 @@ async def get_bili(uid,dynamics):
             print(title)
             RssData[uid]['bili'][link]= '[b][url='+link+']'+ title +'[/url][/b]\n'+summary
             New[uid]['bili'][link]= '[b][url='+link+']'+ title +'[/url][/b]\n'+summary
-                
 
-                
+
+
 
 async def main():
     tasks = []
@@ -116,15 +116,14 @@ if __name__ == '__main__':
     New = {"672342685":{"bili":{},"douyin":{}},"703007996":{"bili":{},"douyin":{}},"672353429":{"bili":{},"douyin":{}},"351609538":{"bili":{},"douyin":{}},"672346917":{"bili":{},"douyin":{}},"672328094":{"bili":{},"douyin":{}}}
     with open ('./Rss.json',"r",encoding='utf-8') as f:
         RssData = json.load(f)
-    with open ('./Live.json',"r",encoding='utf-8') as f:
-        LiveData = json.load(f)
+    # with open ('./Live.json',"r",encoding='utf-8') as f:
+    #     LiveData = json.load(f)
     asyncio.run(main())
-    with open ('./Rss.json',"w",encoding='utf-8') as f:    
+    with open ('./Rss.json',"w",encoding='utf-8') as f:
         f.write(json.dumps(RssData,indent=2,ensure_ascii=False))
     with open ('./New.json',"w",encoding='utf-8') as f:
         f.write(json.dumps(New,indent=2,ensure_ascii=False))
-    with open ('./Live.json',"w",encoding='utf-8') as f:
-        f.write(json.dumps(LiveData,indent=2,ensure_ascii=False))
-    os.system("python reply.py")
+    # with open ('./Live.json',"w",encoding='utf-8') as f:
+    #     f.write(json.dumps(LiveData,indent=2,ensure_ascii=False))
+    # os.system("python reply.py")
     exit()
-        
