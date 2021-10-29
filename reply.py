@@ -7,6 +7,8 @@ username = 'ubuntu'
 
 idict = {'672346917':'[b][color=#9Ac8E2]向晚大魔王[/color][/b]','703007996':'[b][color=#689D6A]A-SOUL_Official[/color][/b]','672353429':'[b][color=#DB7D74]贝拉kira[/color][/b]','672342685':'[b][color=#576690]乃琳Queen[/color][/b]','351609538':'[b][color=#B8A6D9]珈乐Carol[/color][/b]','672328094':'[b][color=#E799B0]嘉然今天吃什么[/color][/b]'}
 
+pure_idict = {'672346917': '向晚大魔王', '703007996': 'A-SOUL_Official', '672353429': '贝拉kira', '672342685': '乃琳Queen', '351609538': '珈乐Carol', '672328094': '嘉然今天吃什么'}
+
 if __name__ == '__main__':
     msg = u''
     qqmsg = []
@@ -19,6 +21,7 @@ if __name__ == '__main__':
                     summary = NewData[uid]['bili'][link]
                     if '管家代转' not in summary and '运营代转' not in summary:
                         msg = msg + idict[uid] +':' + summary +'\n\n'
+                        qqmsg.append({"type":"Plain", "text":pure_dict[uid]})
                         qqmsg.append({"type":"Plain", "text":str(link)})
                         tempmsg = re.sub(r'\[.+?\]','',summary)
                         qqmsg.append({"type":"Plain", "text":str(tempmsg)})
@@ -30,6 +33,7 @@ if __name__ == '__main__':
                 for link in NewData[uid]['douyin'].keys():
                     summary = NewData[uid]['douyin'][link]
                     msg = msg + idict[uid] +':'+ summary +'\n\n'
+                    qqmsg.append({"type":"Plain", "text":pure_dict[uid]})
                     qqmsg.append({"type":"Plain", "text":str(link)})
                     tempmsg = re.sub(r'\[.+?\]','',summary)
                     qqmsg.append({"type":"Plain", "text":str(tempmsg)})
@@ -71,8 +75,12 @@ if __name__ == '__main__':
                 Data = {'formhash': formhash,'message': msg,'subject': subject,'posttime':int(time.time()),'wysiwyg':1,'usesig':1}
                 req = requests.post(replyurl,data=Data,headers=headers,cookies=cookies)
                 print(req)
-                qqurl = 'http://127.0.0.1:1314'
-                qqdata = {'type' : 'ReplyPush','msg':qqmsg}
+                qqurl = 'http://127.0.0.1:7890/sendGroupMessage'
+                qqdata = {
+                    "sessionKey":"",
+                    "target":614391357,
+                    "messageChain":qqmsg
+                }
                 qqreq = requests.post(qqurl,json=qqdata)
                 New = {}
                 with open ('./New.json',"w",encoding='utf-8') as f:
