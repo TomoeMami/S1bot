@@ -3,6 +3,8 @@
 
 import re, time,requests,io,sys,json,os
 
+username = 'ubuntu'
+
 idict = {'672346917':'[b][color=#9Ac8E2]向晚大魔王[/color][/b]','703007996':'[b][color=#689D6A]A-SOUL_Official[/color][/b]','672353429':'[b][color=#DB7D74]贝拉kira[/color][/b]','672342685':'[b][color=#576690]乃琳Queen[/color][/b]','351609538':'[b][color=#B8A6D9]珈乐Carol[/color][/b]','672328094':'[b][color=#E799B0]嘉然今天吃什么[/color][/b]'}
 
 if __name__ == '__main__':
@@ -25,7 +27,7 @@ if __name__ == '__main__':
             sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='utf8') #改变标准输出的默认编码
             # # 浏览器登录后得到的cookie，也就是刚才复制的字符串
             # cookie_str1 = os.getenv('S1_BOT_COOKIE')
-            with open ('/home/riko/s1cookie-2.txt','r',encoding='utf-8') as f:
+            with open ('/home/'+username+'/s1cookie-2.txt','r',encoding='utf-8') as f:
                 cookie_str1 = f.read()
             cookie_str = repr(cookie_str1)[1:-1]
             # #把cookie字符串处理成字典，以便接下来使用
@@ -44,7 +46,7 @@ if __name__ == '__main__':
                 formhash = rows[0]
                 print('formhash is: ' + formhash)
                 subject = u''
-                with open ('/home/riko/S1PlainTextBackup/A-Thread-id.txt','r') as f:
+                with open ('/home/'+username+'/S1PlainTextBackup/A-Thread-id.txt','r') as f:
                     threadid = f.read()
                 '''A综ID，手动修改'''
                 # threadid = 2028372
