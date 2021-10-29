@@ -125,5 +125,5 @@ if __name__ == '__main__':
         f.write(json.dumps(New,indent=2,ensure_ascii=False))
     # with open ('./Live.json',"w",encoding='utf-8') as f:
     #     f.write(json.dumps(LiveData,indent=2,ensure_ascii=False))
-    # os.system("python reply.py")
+    os.system("python reply.py")
     exit()
