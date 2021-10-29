@@ -22,9 +22,9 @@ if __name__ == '__main__':
                         qqmsg.append({"type":"Plain", "text":str(link)})
                         tempmsg = re.sub(r'\[.+?\]','',summary)
                         qqmsg.append({"type":"Plain", "text":str(tempmsg)})
-                        qqmsg-img = re.findall(r'\[img\](.*?)\[/img\]',summary)
-                        if(len(qqmsg-img)!=0):
-                            for i in qqmsg-img:
+                        qqmsg_img = re.findall(r'\[img\](.*?)\[/img\]',summary)
+                        if(len(qqmsg_img)!=0):
+                            for i in qqmsg_img:
                                 qqmsg.append({"type":"Image", "url":str(i)})
             if name == 'douyin':
                 for link in NewData[uid]['douyin'].keys():
@@ -33,9 +33,9 @@ if __name__ == '__main__':
                     qqmsg.append({"type":"Plain", "text":str(link)})
                     tempmsg = re.sub(r'\[.+?\]','',summary)
                     qqmsg.append({"type":"Plain", "text":str(tempmsg)})
-                    qqmsg-img = re.findall(r'\[img\](.*?)\[/img\]',summary)
-                    if(len(qqmsg-img)!=0):
-                        for i in qqmsg-img:
+                    qqmsg_img = re.findall(r'\[img\](.*?)\[/img\]',summary)
+                    if(len(qqmsg_img)!=0):
+                        for i in qqmsg_img:
                             qqmsg.append({"type":"Image", "url":str(i)})
     if msg:
         while 1:
