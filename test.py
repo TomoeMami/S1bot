@@ -18,6 +18,10 @@ if(len(qqmsg_img)!=0):
     for i in qqmsg_img:
         qqmsg.append({"type":"Image", "url":str(i)})
 print(qqmsg)
-qqurl = 'http://127.0.0.1:1314'
-qqdata = {'type' : 'ReplyPush','msg':qqmsg}
+qqurl = 'http://127.0.0.1:7890/sendGroupMessage'
+qqdata = {
+  "sessionKey":"",
+  "target":614391357,
+  "messageChain":qqmsg
+}
 qqreq = requests.post(qqurl,json=qqdata)
