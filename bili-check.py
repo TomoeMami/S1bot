@@ -22,7 +22,7 @@ async def post_pics(imgurl):
             print(imgurl+str(resp2))
             rurl = '[img]'+resp2['data']['url']+'[/img]'
         else:
-            rurl = '[尺寸过大图片，请至原链接查看]'
+            rurl = '⟦尺寸过大图片，请至原链接查看⟧'
         return rurl
 
 async def get_bili(uid,dynamics):
