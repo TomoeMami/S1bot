@@ -21,26 +21,26 @@ if __name__ == '__main__':
                     summary = NewData[uid]['bili'][link]
                     if '管家代转' not in summary and '运营代转' not in summary:
                         msg = msg + idict[uid] +':' + summary +'\n\n'
-                        qqmsg.append({"type":"Plain", "text":pure_dict[uid]})
-                        qqmsg.append({"type":"Plain", "text":str(link)})
-                        tempmsg = re.sub(r'\[.+?\]','',summary)
-                        qqmsg.append({"type":"Plain", "text":str(tempmsg)})
-                        qqmsg_img = re.findall(r'\[img\](.*?)\[/img\]',summary)
-                        if(len(qqmsg_img)!=0):
-                            for i in qqmsg_img:
-                                qqmsg.append({"type":"Image", "url":str(i)})
+#                        qqmsg.append({"type":"Plain", "text":pure_dict[uid]})
+#                        qqmsg.append({"type":"Plain", "text":str(link)})
+#                        tempmsg = re.sub(r'\[.+?\]','',summary)
+#                        qqmsg.append({"type":"Plain", "text":str(tempmsg)})
+#                        qqmsg_img = re.findall(r'\[img\](.*?)\[/img\]',summary)
+#                        if(len(qqmsg_img)!=0):
+#                            for i in qqmsg_img:
+#                               qqmsg.append({"type":"Image", "url":str(i)})
             if name == 'douyin':
                 for link in NewData[uid]['douyin'].keys():
                     summary = NewData[uid]['douyin'][link]
                     msg = msg + idict[uid] +':'+ summary +'\n\n'
-                    qqmsg.append({"type":"Plain", "text":pure_dict[uid]})
-                    qqmsg.append({"type":"Plain", "text":str(link)})
-                    tempmsg = re.sub(r'\[.+?\]','',summary)
-                    qqmsg.append({"type":"Plain", "text":str(tempmsg)})
-                    qqmsg_img = re.findall(r'\[img\](.*?)\[/img\]',summary)
-                    if(len(qqmsg_img)!=0):
-                        for i in qqmsg_img:
-                            qqmsg.append({"type":"Image", "url":str(i)})
+#                    qqmsg.append({"type":"Plain", "text":pure_dict[uid]})
+#                    qqmsg.append({"type":"Plain", "text":str(link)})
+#                    tempmsg = re.sub(r'\[.+?\]','',summary)
+#                    qqmsg.append({"type":"Plain", "text":str(tempmsg)})
+#                    qqmsg_img = re.findall(r'\[img\](.*?)\[/img\]',summary)
+#                    if(len(qqmsg_img)!=0):
+#                        for i in qqmsg_img:
+#                            qqmsg.append({"type":"Image", "url":str(i)})
     if msg:
         while 1:
             sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='utf8') #改变标准输出的默认编码
@@ -75,13 +75,13 @@ if __name__ == '__main__':
                 Data = {'formhash': formhash,'message': msg,'subject': subject,'posttime':int(time.time()),'wysiwyg':1,'usesig':1}
                 req = requests.post(replyurl,data=Data,headers=headers,cookies=cookies)
                 print(req)
-                qqurl = 'http://127.0.0.1:7890/sendGroupMessage'
-                qqdata = {
-                    "sessionKey":"",
-                    "target":614391357,
-                    "messageChain":qqmsg
-                }
-                qqreq = requests.post(qqurl,json=qqdata)
+#                qqurl = 'http://127.0.0.1:7890/sendGroupMessage'
+#                qqdata = {
+#                    "sessionKey":"",
+#                    "target":614391357,
+#                    "messageChain":qqmsg
+#                }
+#                qqreq = requests.post(qqurl,json=qqdata)
                 New = {}
                 with open ('./New.json',"w",encoding='utf-8') as f:
                     f.write(json.dumps(New,indent=2,ensure_ascii=False))
