@@ -27,7 +27,7 @@ async def get_bili(uid,dynamics):
         data.extend(page['cards'])
     for sdata in data:
         url = 'https://t.bilibili.com/'+sdata['desc']['dynamic_id_str']
-        RssData[str(uid)]['bili'][url]= '发布B站动态'
+        RssData[str(uid)]['bili'][url]= '发布动态'
 
 async def get_douyin(uid,url):
     async with aiohttp.ClientSession(headers=headers,cookies=cookies) as session:
