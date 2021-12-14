@@ -46,6 +46,12 @@ async def get_bili(uid,dynamics):
     links = list(dynamics[uid].keys())
     newlinks = list(set(links) - set(datalinks))
     if(newlinks):
+        with open ('./Rss.json',"r",encoding='utf-8') as f:
+            RssData = json.load(f)
+        temp_rss = []
+        for i in RssData.values():
+            temp_rss = temp_rss + list(i['bili'].values())
+        cached_rss = set(temp_rss)
         for link in newlinks:
             for sdata in data:
                 if link == ('https://t.bilibili.com/'+sdata['desc']['dynamic_id_str']):
@@ -97,7 +103,8 @@ async def get_bili(uid,dynamics):
             title = dynamics[uid][link]['title']
             print(title)
             RssData[uid]['bili'][link]= summary
-            New[uid]['bili'][link]= summary
+            if summary not in cached_rss:
+                New[uid]['bili'][link]= summary
 
 
 
