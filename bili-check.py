@@ -47,9 +47,9 @@ async def get_bili(uid,dynamics):
     newlinks = list(set(links) - set(datalinks))
     if(newlinks):
         with open ('./Rss.json',"r",encoding='utf-8') as f:
-            RssData = json.load(f)
+            temp_data = json.load(f)
         temp_rss = []
-        for i in RssData.values():
+        for i in temp_data.values():
             temp_rss = temp_rss + list(i['bili'].values())
         cached_rss = set(temp_rss)
         for link in newlinks:
