@@ -14,18 +14,12 @@ if __name__ == '__main__':
     qqmsg = []
     with open ('./New.json',"r",encoding='utf-8') as f:
         NewData = json.load(f)
-    with open ('./Rss.json',"r",encoding='utf-8') as f:
-        RssData = json.load(f)
-    temp_rss = []
-    for i in RssData.values():
-        temp_rss = temp_rss + list(i['bili'].values())
-    cached_rss = set(temp_rss)
     for uid in NewData.keys():
         for name in NewData[uid].keys():
             if name == 'bili':
                 for link in NewData[uid]['bili'].keys():
                     summary = NewData[uid]['bili'][link]
-                    if '管家代转' not in summary and '运营代转' not in summary and summary not in cached_rss:
+                    if '管家代转' not in summary and '运营代转' not in summary :
                         msg = msg + idict[uid] +':'+'[b][url='+link+']发布B站动态[/url][/b]\n'+ + summary +'\n\n'
 #                        qqmsg.append({"type":"Plain", "text":pure_dict[uid]})
 #                        qqmsg.append({"type":"Plain", "text":str(link)})
