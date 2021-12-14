@@ -96,8 +96,8 @@ async def get_bili(uid,dynamics):
             summary = dynamics[uid][link]['summary']
             title = dynamics[uid][link]['title']
             print(title)
-            RssData[uid]['bili'][link]= '[b][url='+link+']'+ title +'[/url][/b]\n'+summary
-            New[uid]['bili'][link]= '[b][url='+link+']'+ title +'[/url][/b]\n'+summary
+            RssData[uid]['bili'][link]= summary
+            New[uid]['bili'][link]= summary
 
 
 
