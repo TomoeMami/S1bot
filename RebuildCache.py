@@ -47,7 +47,7 @@ async def main():
     dynamics = {"672342685":{},"703007996":{},"672353429":{},"351609538":{},"672346917":{},"672328094":{}}
     for uid in idlist:
         tasks.append(get_bili(uid,dynamics))
-        tasks.append(get_douyin(uid)
+        tasks.append(get_douyin(uid))
     await asyncio.gather(*tasks)
 
 if __name__ == '__main__':
