@@ -46,12 +46,6 @@ async def get_bili(uid,dynamics):
     links = list(dynamics[uid].keys())
     newlinks = list(set(links) - set(datalinks))
     if(newlinks):
-        with open ('./Rss.json',"r",encoding='utf-8') as f:
-            temp_data = json.load(f)
-        temp_rss = []
-        for i in temp_data.values():
-            temp_rss = temp_rss + list(i['bili'].values())
-        cached_rss = set(temp_rss)
         for link in newlinks:
             for sdata in data:
                 if link == ('https://t.bilibili.com/'+sdata['desc']['dynamic_id_str']):
@@ -123,6 +117,10 @@ if __name__ == '__main__':
     New = {"672342685":{"bili":{},"douyin":{}},"703007996":{"bili":{},"douyin":{}},"672353429":{"bili":{},"douyin":{}},"351609538":{"bili":{},"douyin":{}},"672346917":{"bili":{},"douyin":{}},"672328094":{"bili":{},"douyin":{}}}
     with open ('./Rss.json',"r",encoding='utf-8') as f:
         RssData = json.load(f)
+    temp_rss = []
+    for i in RssData.values():
+        temp_rss = temp_rss + list(i['bili'].values())
+    cached_rss = set(temp_rss)
     # with open ('./Live.json',"r",encoding='utf-8') as f:
     #     LiveData = json.load(f)
     asyncio.run(main())
