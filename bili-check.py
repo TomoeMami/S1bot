@@ -53,7 +53,7 @@ async def get_bili(uid,dynamics):
                         #发布视频
                         dynamics[uid][link]['title'] = sdata['card']['title']
                         pics =await  post_pics(sdata['card']['pic'])
-                        dynamics[uid][link]['summary'] = '[quote]' +sdata['card']['desc']+'\n'+pics+'[/quote]'
+                        dynamics[uid][link]['summary'] = {"txt":'[quote]' +sdata['card']['desc']+'\n',"pic":pics+'[/quote]'}
                     elif 'origin' in sdata['card'].keys():
                         #转发
                         origindyna = json.loads(sdata['card']['origin'])
@@ -61,44 +61,44 @@ async def get_bili(uid,dynamics):
                         if 'desc' in origindyna.keys():
                             #转发视频
                             pics =await  post_pics(origindyna['pic'])
-                            dynamics[uid][link]['summary'] = sdata['card']['item']['content']+'\n[quote][b]'+'@'+origindyna['owner']['name']+'[/b]: '+origindyna['dynamic'] + '\n----\n[b]'+origindyna['title']+'[/b]\n'+origindyna['desc']+'\n'+pics+'[/quote]'
+                            dynamics[uid][link]['summary'] = {"txt":sdata['card']['item']['content']+'\n[quote][b]'+'@'+origindyna['owner']['name']+'[/b]: '+origindyna['dynamic'] + '\n----\n[b]'+origindyna['title']+'[/b]\n'+origindyna['desc']+'\n',"pic":pics+'[/quote]'}
                         elif 'words' in origindyna.keys():
                             #转发文章
-                            dynamics[uid][link]['summary'] = sdata['card']['item']['content']+'\n[quote][b]'+'@'+origindyna['author']['name']+'[/b]:[b] '+origindyna['title']+'[/b]\n'+origindyna['summary']+'[/quote]'
+                            dynamics[uid][link]['summary'] = {"txt":sdata['card']['item']['content']+'\n[quote][b]'+'@'+origindyna['author']['name']+'[/b]:[b] '+origindyna['title']+'[/b]\n'+origindyna['summary']+'[/quote]',"pic":'\n'}
                         elif 'description' in origindyna['item'].keys():
                             #转发图片动态
-                            dynamics[uid][link]['summary'] = sdata['card']['item']['content']+'\n[quote][b]'+'@'+origindyna['user']['name']+'[/b]: '+origindyna['item']['description']
+                            dynamics[uid][link]['summary'] = {"txt":sdata['card']['item']['content']+'\n[quote][b]'+'@'+origindyna['user']['name']+'[/b]: '+origindyna['item']['description'],"pic":'\n'}
                             for i in origindyna['item']['pictures']:
                                 pics =await  post_pics(i['img_src'])
-                                dynamics[uid][link]['summary'] = dynamics[uid][link]['summary'] + '\n'+ pics
-                            dynamics[uid][link]['summary'] = dynamics[uid][link]['summary'] +'[/quote]'
+                                dynamics[uid][link]['summary']['pic'] = dynamics[uid][link]['summary']['pic'] + '\n'+ pics
+                            dynamics[uid][link]['summary']['pic'] = dynamics[uid][link]['summary']['pic'] +'[/quote]'
                         else:
                             #转发普通动态
-                            dynamics[uid][link]['summary'] = sdata['card']['item']['content']+'\n[quote][b]'+'@'+origindyna['user']['uname']+'[/b]: '+origindyna['item']['content']+'[/quote]'
+                            dynamics[uid][link]['summary'] = {"txt":sdata['card']['item']['content']+'\n[quote][b]'+'@'+origindyna['user']['uname']+'[/b]: '+origindyna['item']['content']+'[/quote]',"pic":'\n'}
                     elif 'words' in sdata['card'].keys():
                         #发文章
                         dynamics[uid][link]['title'] = sdata['card']['title']
                         pics =await  post_pics(sdata['card']['origin_image_urls'][0])
-                        dynamics[uid][link]['summary'] ='[quote]' + sdata['card']['summary']+'\n'+pics+'[/quote]'
+                        dynamics[uid][link]['summary'] = {"txt":'[quote]' + sdata['card']['summary']+'\n',"pic":pics+'[/quote]'}
                     else:
                         #发动态,
                         dynamics[uid][link]['title'] = '发布动态'
                         # 带图动态
                         if 'description' in sdata['card']['item'].keys():
-                            dynamics[uid][link]['summary'] = '[quote]' +sdata['card']['item']['description']
+                            dynamics[uid][link]['summary'] = {"txt":'[quote]' +sdata['card']['item']['description'],"pic":'\n'}
                             for i in sdata['card']['item']['pictures']:
                                 pics = await post_pics(i['img_src'])
-                                dynamics[uid][link]['summary'] = dynamics[uid][link]['summary'] + '\n'+ pics
-                            dynamics[uid][link]['summary'] = dynamics[uid][link]['summary'] +'[/quote]'
+                                dynamics[uid][link]['summary']['pic'] = dynamics[uid][link]['summary']['pic'] + '\n'+ pics
+                            dynamics[uid][link]['summary'] = dynamics[uid][link]['summary']['pic'] +'[/quote]'
                         else:
-                            dynamics[uid][link]['summary'] = '[quote]' + sdata['card']['item']['content']+'[/quote]'
+                            dynamics[uid][link]['summary'] = {"txt":'[quote]' + sdata['card']['item']['content']+'[/quote]',"pic":'\n'}
             print(link+'-')
-            summary = dynamics[uid][link]['summary']
+            summary = dynamics[uid][link]['summary']['txt']
             title = dynamics[uid][link]['title']
             print(title)
             RssData[uid]['bili'][link]= summary
             if summary not in cached_rss:
-                New[uid]['bili'][link]= summary
+                New[uid]['bili'][link]= summary + dynamics[uid][link]['summary']['pic']
 
 
 
