@@ -100,9 +100,6 @@ async def get_bili(uid,dynamics):
             if summary not in cached_rss:
                 New[uid]['bili'][link]= summary + dynamics[uid][link]['summary']['pic']
 
-
-
-
 async def main():
     tasks = []
     dynamics = {"672342685":{},"703007996":{},"672353429":{},"351609538":{},"672346917":{},"672328094":{}}
