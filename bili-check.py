@@ -89,7 +89,7 @@ async def get_bili(uid,dynamics):
                             for i in sdata['card']['item']['pictures']:
                                 pics = await post_pics(i['img_src'])
                                 dynamics[uid][link]['summary']['pic'] = dynamics[uid][link]['summary']['pic'] + '\n'+ pics
-                            dynamics[uid][link]['summary'] = dynamics[uid][link]['summary']['pic'] +'[/quote]'
+                            dynamics[uid][link]['summary']['pic'] = dynamics[uid][link]['summary']['pic'] +'[/quote]'
                         else:
                             dynamics[uid][link]['summary'] = {"txt":'[quote]' + sdata['card']['item']['content']+'[/quote]',"pic":'\n'}
             print(link+'-')
