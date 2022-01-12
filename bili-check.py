@@ -30,13 +30,13 @@ async def get_bili(uid,dynamics):
     u = user.User(int(uid))
     offset = 0
     page = await u.get_dynamics(offset)
-    # live = await u.get_live_info()
-    # if live['liveStatus'] != LiveData[uid] and live['liveStatus'] == 1:
-    #     liveurl = live['url']
-    #     livetitle = live['title']
-    #     pics = await post_pics(live['cover'])
-    #     New[uid]['bili'][liveurl]= '[b]开始直播了 -> [url='+liveurl+']'+ livetitle +'[/url][/b]\n'+ pics
-    # LiveData[uid] = live['liveStatus']
+    if time.strftime("%H:%M", time.localtime()) in ['18:50','20:00','21:10']:
+        live = await u.get_live_info()
+        if live['liveStatus'] == 1:
+            liveurl = live['url']
+            livetitle = live['title']
+            pics = await post_pics(live['cover'])
+            New[uid]['bili'][liveurl]= '[b]开始直播了 -> [url='+liveurl+']'+ livetitle +'[/url][/b]\n'+ pics
     if 'cards' in page:
         data.extend(page['cards'])
     for sdata in data:
