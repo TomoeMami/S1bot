@@ -120,8 +120,7 @@ if __name__ == '__main__':
     cached_rss = set(temp_rss)
     # with open ('./Live.json',"r",encoding='utf-8') as f:
     #     LiveData = json.load(f)
-    loop = asyncio.new_event_loop()
-    loop.run_until_complete(main())
+    asyncio.get_event_loop().run_until_complete(main())
     #asyncio.run(main())
     with open ('./Rss.json',"w",encoding='utf-8') as f:
         f.write(json.dumps(RssData,indent=2,ensure_ascii=False))
