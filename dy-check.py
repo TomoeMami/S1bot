@@ -53,12 +53,14 @@ async def get_douyin(uid):
                 async with session.get(dlink) as response:
                     html = await response.content.read()
                 dy = html.decode('utf-8')
+                print(dy)
                 summary = re.search(r'<h1.*?</h1>',str(dy))
                 summary = re.sub(r'<.*?>','',summary.group(0))
                 dy_pic_url = 'https://www.iesdouyin.com/web/api/v2/aweme/post/?sec_uid='+uid_list[uid]
                 async with session.get(dy_pic_url) as response:
                     dy_pic_info = await response.text()
                 dy_pic_json = json.loads(dy_pic_info)
+                print(dy_pic_json)
                 pics =await  post_pics(dy_pic_json['aweme_list'][0]['video']['dynamic_cover']['url_list'][0])
                 summary = summary + '\n'+pics
                 RssData[uid]['douyin'][dlink]='[b][url='+ dlink +']发布抖音[/url][/b]\n[quote]'+ summary +'[/quote]'
