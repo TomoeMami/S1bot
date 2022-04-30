@@ -32,7 +32,6 @@ async def get_bili(uid,dynamics):
     page = await u.get_dynamics(offset)
         #if time.strftime("%H:%M", time.localtime()) in ['18:50','20:00','21:10']:
     live = await u.get_live_info()
-    print(live)
     liveurl = live['live_room']['url']
     livetitle = live['live_room']['title']
     if(RssData[uid]['livetitle'] != livetitle):
