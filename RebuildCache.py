@@ -24,7 +24,7 @@ async def get_bili(uid,dynamics):
     offset = 0
     page = await u.get_dynamics(offset)
     live = await u.get_live_info()
-    livetitle = live['title']
+    livetitle = live['live_room']['title']
     if 'cards' in page:
         data.extend(page['cards'])
     for sdata in data:
