@@ -23,11 +23,14 @@ async def get_bili(uid,dynamics):
     u = user.User(int(uid))
     offset = 0
     page = await u.get_dynamics(offset)
+    live = await u.get_live_info()
+    livetitle = live['title']
     if 'cards' in page:
         data.extend(page['cards'])
     for sdata in data:
         url = 'https://t.bilibili.com/'+sdata['desc']['dynamic_id_str']
         RssData[str(uid)]['bili'][url]= '发布动态'
+    RssData[str(uid)]['livetitle'] = livetitle
 
 async def get_douyin(uid):
     url = 'https://www.douyin.com/user/'+uid_list[uid]

@@ -30,11 +30,14 @@ async def get_bili(uid,dynamics):
     u = user.User(int(uid))
     offset = 0
     page = await u.get_dynamics(offset)
-    #if time.strftime("%H:%M", time.localtime()) in ['18:50','20:00','21:10']:
-    #    live = await u.get_live_info()
+        #if time.strftime("%H:%M", time.localtime()) in ['18:50','20:00','21:10']:
+    live = await u.get_live_info()
     #    if live['liveStatus'] == 1:
-    #        liveurl = live['url']
-    #        livetitle = live['title']
+    liveurl = live['url']
+    livetitle = live['title']
+    if(RssData[uid]['livetitle'] != livetitle):
+        New[uid]['bili'][liveurl] = '[b]直播间标题改为 -> [url='+liveurl+']'+ livetitle +'[/url][/b]\n'
+        RssData[uid]['livetitle'] = livetitle
     #        pics = await post_pics(live['cover'])
     #        New[uid]['bili'][liveurl]= '[b]开始直播了 -> [url='+liveurl+']'+ livetitle +'[/url][/b]\n'+ pics
     if 'cards' in page:
