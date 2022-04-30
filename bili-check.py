@@ -32,9 +32,9 @@ async def get_bili(uid,dynamics):
     page = await u.get_dynamics(offset)
         #if time.strftime("%H:%M", time.localtime()) in ['18:50','20:00','21:10']:
     live = await u.get_live_info()
-    #    if live['liveStatus'] == 1:
-    liveurl = live['url']
-    livetitle = live['title']
+    print(live)
+    liveurl = live['live_room']['url']
+    livetitle = live['live_room']['title']
     if(RssData[uid]['livetitle'] != livetitle):
         New[uid]['bili'][liveurl] = '[b]直播间标题改为 -> [url='+liveurl+']'+ livetitle +'[/url][/b]\n'
         RssData[uid]['livetitle'] = livetitle
