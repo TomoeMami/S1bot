@@ -34,7 +34,7 @@ async def get_bili(uid,dynamics):
     live = await u.get_live_info()
     liveurl = live['live_room']['url']
     livetitle = live['live_room']['liveStatus']
-    if(RssData[uid]['livetitle'] != livetitle):
+    if(RssData[uid]['livetitle'] != livetitle and livetitle == 1):
         New[uid]['bili'][liveurl] = '[b]开播了！直播间标题为 -> [url='+liveurl+']'+ live['live_room']['title'] +'[/url][/b]\n'
         RssData[uid]['livetitle'] = livetitle
     #        pics = await post_pics(live['cover'])
