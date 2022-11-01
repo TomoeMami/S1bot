@@ -95,11 +95,11 @@ async def get_bili(uid,dynamics):
                         else:
                             dynamics[uid][link]['summary'] = {"txt":'[quote]' + sdata['card']['item']['content']+'[/quote]',"pic":'\n'}
             print(link+'-')
-            summary = dynamics[uid][link]['summary']['txt']
+            summary = title +'[/url][/b]\n'+ dynamics[uid][link]['summary']['txt']
             title = dynamics[uid][link]['title']
-            RssData[uid]['bili'][link] = title +'[/url][/b]\n'+ summary
+            RssData[uid]['bili'][link] = summary
             if summary not in cached_rss:
-                New[uid]['bili'][link]= '[b][url='+link+']'+ title +'[/url][/b]\n'+ summary + dynamics[uid][link]['summary']['pic']
+                New[uid]['bili'][link]= '[b][url='+link+']'+ summary + dynamics[uid][link]['summary']['pic']
                 print(title)
 
 async def main():
