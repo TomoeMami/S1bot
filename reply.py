@@ -5,9 +5,9 @@ import re, time,requests,io,sys,json,os
 
 username = 'ubuntu'
 
-idict = {'672346917':'[b][color=#9Ac8E2]向晚大魔王[/color][/b]','703007996':'[b][color=#689D6A]A-SOUL_Official[/color][/b]','672353429':'[b][color=#DB7D74]贝拉kira[/color][/b]','672342685':'[b][color=#576690]乃琳Queen[/color][/b]','351609538':'[b][color=#B8A6D9]珈乐Carol[/color][/b]','672328094':'[b][color=#E799B0]嘉然今天吃什么[/color][/b]'}
+idict = {'672346917':'[b][color=#9Ac8E2]向晚大魔王[/color][/b]','703007996':'[b][color=#689D6A]A-SOUL_Official[/color][/b]','672353429':'[b][color=#DB7D74]贝拉kira[/color][/b]','672342685':'[b][color=#576690]乃琳Queen[/color][/b]','351609538':'[b][color=#B8A6D9]珈乐Carol[/color][/b]','672328094':'[b][color=#E799B0]嘉然今天吃什么[/color][/b]','3493082517474232':'[b][color=#3c3836]枝江娱乐的小黑[/color][/b]'}
 
-pure_idict = {'672346917': '向晚大魔王', '703007996': 'A-SOUL_Official', '672353429': '贝拉kira', '672342685': '乃琳Queen', '351609538': '珈乐Carol', '672328094': '嘉然今天吃什么'}
+pure_idict = {'672346917': '向晚大魔王', '703007996': 'A-SOUL_Official', '672353429': '贝拉kira', '672342685': '乃琳Queen', '351609538': '珈乐Carol', '672328094': '嘉然今天吃什么' ,'3493082517474232': '枝江娱乐的小黑'}
 
 if __name__ == '__main__':
     msg = u''
