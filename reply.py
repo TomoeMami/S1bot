@@ -26,10 +26,10 @@ if __name__ == '__main__':
                     tempmsg = re.sub(r'\[.+?\]','',tempmsg)
                     qqmsg = qqmsg + tempmsg + '\n'
                     qqmsg = qqmsg + str(link)+'\n'
-                    qqmsg_img = re.findall(r'\[img\](.*?)\[/img\]',summary)
-                    if(len(qqmsg_img)!=0):
-                        for i in qqmsg_img:
-                            qqmsg = qqmsg + '[CQ:image,file='+str(i)+',type=show,id=40000]\n'
+                    # qqmsg_img = re.findall(r'\[img\](.*?)\[/img\]',summary)
+                    # if(len(qqmsg_img)!=0):
+                    #     for i in qqmsg_img:
+                    #         qqmsg = qqmsg + '[CQ:image,file='+str(i)+',type=show,id=40000]\n'
             if name == 'douyin':
                 for link in NewData[uid]['douyin'].keys():
                     summary = NewData[uid]['douyin'][link]
