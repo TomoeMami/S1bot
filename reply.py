@@ -7,11 +7,11 @@ username = 'ubuntu'
 
 idict = {'672346917':'[b][color=#9Ac8E2]向晚大魔王[/color][/b]','703007996':'[b][color=#689D6A]A-SOUL_Official[/color][/b]','672353429':'[b][color=#DB7D74]贝拉kira[/color][/b]','672342685':'[b][color=#576690]乃琳Queen[/color][/b]','351609538':'[b][color=#B8A6D9]珈乐Carol[/color][/b]','672328094':'[b][color=#E799B0]嘉然今天吃什么[/color][/b]','3493082517474232':'[b][color=#3c3836]枝江娱乐的小黑[/color][/b]'}
 
-pure_idict = {'672346917': '向晚大魔王', '703007996': 'A-SOUL_Official', '672353429': '贝拉kira', '672342685': '乃琳Queen', '351609538': '珈乐Carol', '672328094': '嘉然今天吃什么' ,'3493082517474232': '枝江娱乐的小黑'}
+pure_dict = {'672346917': '向晚大魔王', '703007996': 'A-SOUL_Official', '672353429': '贝拉kira', '672342685': '乃琳Queen', '351609538': '珈乐Carol', '672328094': '嘉然今天吃什么' ,'3493082517474232': '枝江娱乐的小黑'}
 
 if __name__ == '__main__':
     msg = u''
-    qqmsg = []
+    qqmsg = u''
     with open ('./New.json',"r",encoding='utf-8') as f:
         NewData = json.load(f)
     for uid in NewData.keys():
@@ -21,26 +21,26 @@ if __name__ == '__main__':
                     summary = NewData[uid]['bili'][link]
 #                    if '管家代转' not in summary and '运营代转' not in summary :
                     msg = msg + idict[uid] +':' + summary +'\n\n'
-#                        qqmsg.append({"type":"Plain", "text":pure_dict[uid]})
-#                        qqmsg.append({"type":"Plain", "text":str(link)})
-#                        tempmsg = re.sub(r'\[.+?\]','',summary)
-#                        qqmsg.append({"type":"Plain", "text":str(tempmsg)})
-#                        qqmsg_img = re.findall(r'\[img\](.*?)\[/img\]',summary)
-#                        if(len(qqmsg_img)!=0):
-#                            for i in qqmsg_img:
-#                               qqmsg.append({"type":"Image", "url":str(i)})
+                    qqmsg = qqmsg+pure_dict[uid] + ': \n'
+                    tempmsg = re.sub(r'\[.+?\]','',summary)
+                    qqmsg = qqmsg + tempmsg + '\n'
+                    qqmsg = qqmsg + str(link)+'\n'
+                    qqmsg_img = re.findall(r'\[img\](.*?)\[/img\]',summary)
+                    if(len(qqmsg_img)!=0):
+                        for i in qqmsg_img:
+                            qqmsg = qqmsg + '[CQ:image,file='+ str(i)+']\n'
             if name == 'douyin':
                 for link in NewData[uid]['douyin'].keys():
                     summary = NewData[uid]['douyin'][link]
                     msg = msg + idict[uid] +':'+ summary +'\n\n'
-#                    qqmsg.append({"type":"Plain", "text":pure_dict[uid]})
-#                    qqmsg.append({"type":"Plain", "text":str(link)})
-#                    tempmsg = re.sub(r'\[.+?\]','',summary)
-#                    qqmsg.append({"type":"Plain", "text":str(tempmsg)})
-#                    qqmsg_img = re.findall(r'\[img\](.*?)\[/img\]',summary)
-#                    if(len(qqmsg_img)!=0):
-#                        for i in qqmsg_img:
-#                            qqmsg.append({"type":"Image", "url":str(i)})
+                    # qqmsg.append({"type":"Plain", "text":pure_dict[uid]})
+                    # qqmsg.append({"type":"Plain", "text":str(link)})
+                    # tempmsg = re.sub(r'\[.+?\]','',summary)
+                    # qqmsg.append({"type":"Plain", "text":str(tempmsg)})
+                    # qqmsg_img = re.findall(r'\[img\](.*?)\[/img\]',summary)
+                    # if(len(qqmsg_img)!=0):
+                    #     for i in qqmsg_img:
+                    #         qqmsg.append({"type":"Image", "url":str(i)})
     if msg:
         while 1:
             sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='utf8') #改变标准输出的默认编码
@@ -75,13 +75,13 @@ if __name__ == '__main__':
                 Data = {'formhash': formhash,'message': msg,'subject': subject,'posttime':int(time.time()),'wysiwyg':1,'usesig':1}
                 req = requests.post(replyurl,data=Data,headers=headers,cookies=cookies)
                 print(req)
-#                qqurl = 'http://127.0.0.1:7890/sendGroupMessage'
-#                qqdata = {
-#                    "sessionKey":"",
-#                    "target":614391357,
-#                    "messageChain":qqmsg
-#                }
-#                qqreq = requests.post(qqurl,json=qqdata)
+                qqurl = 'http://127.0.0.1:7890/send_group_msg'
+                qqdata = {
+                    "group_id":822519722,
+                    "message":qqmsg
+                }
+                qqreq = requests.post(qqurl,json=qqdata)
+                print(qqreq)
                 New = {}
                 with open ('./New.json',"w",encoding='utf-8') as f:
                     f.write(json.dumps(New,indent=2,ensure_ascii=False))
