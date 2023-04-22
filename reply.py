@@ -22,13 +22,14 @@ if __name__ == '__main__':
 #                    if '管家代转' not in summary and '运营代转' not in summary :
                     msg = msg + idict[uid] +':' + summary +'\n\n'
                     qqmsg = qqmsg+pure_dict[uid] + ': \n'
-                    tempmsg = re.sub(r'\[.+?\]','',summary)
+                    tempmsg = re.sub(r'\[img\].+?\[/img\]','',summary)
+                    tempmsg = re.sub(r'\[.+?\]','',tempmsg)
                     qqmsg = qqmsg + tempmsg + '\n'
                     qqmsg = qqmsg + str(link)+'\n'
                     qqmsg_img = re.findall(r'\[img\](.*?)\[/img\]',summary)
                     if(len(qqmsg_img)!=0):
                         for i in qqmsg_img:
-                            qqmsg = qqmsg + '[CQ:image,file='+ str(i)+']\n'
+                            qqmsg = qqmsg + '[CQ:image,file='+str(i)+',type=show,id=40000]\n'
             if name == 'douyin':
                 for link in NewData[uid]['douyin'].keys():
                     summary = NewData[uid]['douyin'][link]
