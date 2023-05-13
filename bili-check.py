@@ -13,14 +13,17 @@ async def post_pics(imgurl):
     async with aiohttp.ClientSession(headers=headers) as session:
         async with session.get(imgurl) as response:
             data = await response.read()
-        inttime = int(time.time())
-        pic_suffix = imgurl.split(".")[-1]
-        params={'filename':str(inttime)+'.'+pic_suffix}
-        async with session.post(url,data=data,params=params) as response:
-            resp2 = await response.json()
-        if(resp2['success']):
-            print(imgurl+str(resp2))
-            rurl = '[img]'+resp2['data']['url']+'[/img]'
+        if(sys.getsizeof(data) < 2000000):
+            inttime = int(time.time())
+            pic_suffix = imgurl.split(".")[-1]
+            params={'filename':str(inttime)+'.'+pic_suffix}
+            async with session.post(url,data=data,params=params) as response:
+                resp2 = await response.json()
+            if(resp2['success']):
+                print(imgurl+str(resp2))
+                rurl = '[img]'+resp2['data']['url']+'[/img]'
+            else:
+                rurl = '⟦尺寸过大图片，请至原链接查看⟧'
         else:
             rurl = '⟦尺寸过大图片，请至原链接查看⟧'
         return rurl
