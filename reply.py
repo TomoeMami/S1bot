@@ -76,13 +76,13 @@ if __name__ == '__main__':
                 Data = {'formhash': formhash,'message': msg,'subject': subject,'posttime':int(time.time()),'wysiwyg':1,'usesig':1}
                 req = requests.post(replyurl,data=Data,headers=headers,cookies=cookies)
                 print(req)
-                qqurl = 'http://127.0.0.1:7890/send_group_msg'
-                qqdata = {
-                    "group_id":822519722,
-                    "message":qqmsg
-                }
-                qqreq = requests.post(qqurl,json=qqdata)
-                print(qqreq)
+                # qqurl = 'http://127.0.0.1:7890/send_group_msg'
+                # qqdata = {
+                #     "group_id":822519722,
+                #     "message":qqmsg
+                # }
+                # qqreq = requests.post(qqurl,json=qqdata)
+                # print(qqreq)
                 New = {}
                 with open ('./New.json',"w",encoding='utf-8') as f:
                     f.write(json.dumps(New,indent=2,ensure_ascii=False))
