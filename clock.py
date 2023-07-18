@@ -10,9 +10,9 @@ def run_parent():
     while True:
         os.system('python bili-check.py')
         count = count + 1
-        if(count == 8):
-            os.system('python dy-check.py')
-            count = 0
+        # if(count == 8):
+        #     os.system('python dy-check.py')
+        #     count = 0
         sleep(20)
 
 if __name__ == '__main__':
