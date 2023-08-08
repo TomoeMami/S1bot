@@ -86,7 +86,7 @@ if __name__ == '__main__':
                 New = {}
                 with open ('./New.json',"w",encoding='utf-8') as f:
                     f.write(json.dumps(New,indent=2,ensure_ascii=False))
-                os.system("./push.sh")
+                #os.system("./push.sh")
                 break
             else:
                 print('none formhash!')
