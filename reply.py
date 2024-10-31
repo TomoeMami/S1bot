@@ -5,9 +5,7 @@ import re, time,requests,io,sys,json,os
 
 username = 'riko'
 
-idict = {'672346917':'[b][color=#9Ac8E2]向晚大魔王[/color][/b]','703007996':'[b][color=#689D6A]A-SOUL_Official[/color][/b]','672353429':'[b][color=#DB7D74]贝拉kira[/color][/b]','672342685':'[b][color=#576690]乃琳Queen[/color][/b]','351609538':'[b][color=#B8A6D9]珈乐Carol[/color][/b]','672328094':'[b][color=#E799B0]嘉然今天吃什么[/color][/b]','3493082517474232':'[b][color=#3c3836]枝江娱乐的小黑[/color][/b]'}
-
-pure_dict = {'672346917': '向晚大魔王', '703007996': 'A-SOUL_Official', '672353429': '贝拉kira', '672342685': '乃琳Queen', '351609538': '珈乐Carol', '672328094': '嘉然今天吃什么' ,'3493082517474232': '枝江娱乐的小黑'}
+idict = {'672346917':'[b][color=#9Ac8E2]向晚大魔王[/color][/b]','703007996':'[b][color=#689D6A]A-SOUL_Official[/color][/b]','672353429':'[b][color=#DB7D74]贝拉kira[/color][/b]','672342685':'[b][color=#576690]乃琳Queen[/color][/b]','351609538':'[b][color=#B8A6D9]珈乐Carol[/color][/b]','672328094':'[b][color=#E799B0]嘉然今天吃什么[/color][/b]','3493082517474232':'[b][color=#3c3836]枝江娱乐的小黑[/color][/b]','3493085336046382':'[b][color=#282828]枝江娱乐官方[/color][/b]','3537115310721181':'[b][color=#c83872]心宜不是心仪[/color][/b]','3537115310721781':'[b][color=#7253c2]思诺snow[/color][/b]','3546730823944886':'[b][color=#fcdbdf]来芙Laffey[/color][/b]'}
 
 if __name__ == '__main__':
     msg = u''
@@ -21,11 +19,11 @@ if __name__ == '__main__':
                     summary = NewData[uid]['bili'][link]
 #                    if '管家代转' not in summary and '运营代转' not in summary :
                     msg = msg + idict[uid] +':' + summary +'\n\n'
-                    qqmsg = qqmsg+pure_dict[uid] + ': \n'
-                    tempmsg = re.sub(r'\[img\].+?\[/img\]','',summary)
-                    tempmsg = re.sub(r'\[.+?\]','',tempmsg)
-                    qqmsg = qqmsg + tempmsg + '\n'
-                    qqmsg = qqmsg + str(link)+'\n'
+                    # qqmsg = qqmsg+pure_dict[uid] + ': \n'
+                    # tempmsg = re.sub(r'\[img\].+?\[/img\]','',summary)
+                    # tempmsg = re.sub(r'\[.+?\]','',tempmsg)
+                    # qqmsg = qqmsg + tempmsg + '\n'
+                    # qqmsg = qqmsg + str(link)+'\n'
                     # qqmsg_img = re.findall(r'\[img\](.*?)\[/img\]',summary)
                     # if(len(qqmsg_img)!=0):
                     #     for i in qqmsg_img:

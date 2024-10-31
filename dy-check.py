@@ -8,7 +8,7 @@ headers = {'User-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/5
 idlist= ['672342685','672353429','351609538','672346917','672328094','703007996']
 uid_list = {'672342685':'MS4wLjABAAAAxCiIYlaaKaMz_J1QaIAmHGgc3bTerIpgTzZjm0na8w5t2KTPrCz4bm_5M5EMPy92','672353429':'MS4wLjABAAAAlpnJ0bXVDV6BNgbHUYVWnnIagRqeeZyNyXB84JXTqAS5tgGjAtw0ZZkv0KSHYyhP','351609538':'MS4wLjABAAAAuZHC7vwqRhPzdeTb24HS7So91u9ucl9c8JjpOS2CPK-9Kg2D32Sj7-mZYvUCJCya','672346917':'MS4wLjABAAAAxOXMMwlShWjp4DONMwfEEfloRYiC1rXwQ64eydoZ0ORPFVGysZEd4zMt8AjsTbyt','672328094':'MS4wLjABAAAA5ZrIrbgva_HMeHuNn64goOD2XYnk4ItSypgRHlbSh1c','703007996':'MS4wLjABAAAAflgvVQ5O1K4RfgUu3k0A2erAZSK7RsdiqPAvxcObn93x2vk4SKk1eUb6l_D4MX-n'}
 
-username = 'ubuntu'
+username = 'riko'
 
 with open ('/home/'+username+'/dycookie.txt','r',encoding='utf-8') as f:
         cookie_str1 = f.read()
@@ -20,27 +20,33 @@ for line in cookie_str.split(';'):
     cookies[key] = value
 
 async def post_pics(imgurl):
-    url = 'https://p.sda1.dev/api/v1/upload_external_noform'
-    async with aiohttp.ClientSession(headers=headers) as session:
-        async with session.get(imgurl,cookies=cookies) as response:
-            data = await response.read()
-        inttime = int(time.time())
-        params={'filename':str(inttime)+'.png'}
-        async with session.post(url,data=data,params=params) as response:
-            resp2 = await response.json()
-        if(resp2['success']):
-            print(imgurl+str(resp2))
-            rurl = '[img]'+resp2['data']['url']+'[/img]'
-        else:
-            rurl = '⟦尺寸过大图片，请至原链接查看⟧'
-        return rurl
+    # url = 'https://p.sda1.dev/api/v1/upload_external_noform'
+    # async with aiohttp.ClientSession(headers=headers) as session:
+    #     async with session.get(imgurl) as response:
+    #         data = await response.read()
+    #     if(sys.getsizeof(data) < 2000000):
+    #         inttime = int(time.time())
+    #         pic_suffix = imgurl.split(".")[-1]
+    #         params={'filename':str(inttime)+'.'+pic_suffix}
+    #         async with session.post(url,data=data,params=params) as response:
+    #             resp2 = await response.json()
+    #         if(resp2['success']):
+    #             print(imgurl+str(resp2))
+    #             rurl = '[img]'+resp2['data']['url']+'[/img]'
+    #         else:
+    #             rurl = '⟦尺寸过大图片，请至原链接查看⟧'
+    #     else:
+    # rurl = '⟦尺寸过大图片，请至原链接查看⟧'
+    rurl = '⟦含图链接，请至原链接查看⟧'
+    return rurl
 
 async def get_douyin(uid):
     url = 'https://www.douyin.com/user/'+uid_list[uid]
-    async with aiohttp.ClientSession(headers=headers,cookies=cookies) as session:
+    async with aiohttp.ClientSession(headers=headers) as session:
         async with session.get(url) as response:
             result = await response.content.read()
         res = result.decode('utf-8')
+        print(res)
         dlinks = re.findall(r'<a href="(//www\.douyin\.com/video/\d+)"',str(res))
         dlinks = list(dlinks)
         for i in range(len(dlinks)):
@@ -56,13 +62,13 @@ async def get_douyin(uid):
                 print(dy)
                 summary = re.search(r'<h1.*?</h1>',str(dy))
                 summary = re.sub(r'<.*?>','',summary.group(0))
-                dy_pic_url = 'https://www.iesdouyin.com/web/api/v2/aweme/post/?sec_uid='+uid_list[uid]
-                async with session.get(dy_pic_url) as response:
-                    dy_pic_info = await response.text()
-                dy_pic_json = json.loads(dy_pic_info)
-                print(dy_pic_json)
-                pics =await  post_pics(dy_pic_json['aweme_list'][0]['video']['dynamic_cover']['url_list'][0])
-                summary = summary + '\n'+pics
+                # dy_pic_url = 'https://www.iesdouyin.com/web/api/v2/aweme/post/?sec_uid='+uid_list[uid]
+                # async with session.get(dy_pic_url) as response:
+                #     dy_pic_info = await response.text()
+                # dy_pic_json = json.loads(dy_pic_info)
+                # print(dy_pic_json)
+                # pics =await  post_pics(dy_pic_json['aweme_list'][0]['video']['dynamic_cover']['url_list'][0])
+                summary = summary + '\n' #+pics
                 RssData[uid]['douyin'][dlink]='[b][url='+ dlink +']发布抖音[/url][/b]\n[quote]'+ summary +'[/quote]'
                 New[uid]['douyin'][dlink]= '[b][url='+ dlink +']发布抖音[/url][/b]\n[quote]'+ summary +'[/quote]'
 
@@ -82,7 +88,7 @@ if __name__ == '__main__':
     asyncio.run(main())
     with open ('./Rss.json',"w",encoding='utf-8') as f:
         f.write(json.dumps(RssData,indent=2,ensure_ascii=False))
-    with open ('./New.json',"w",encoding='utf-8') as f:
-        f.write(json.dumps(New,indent=2,ensure_ascii=False))
-    os.system("python reply.py")
+    # with open ('./New.json',"w",encoding='utf-8') as f:
+    #     f.write(json.dumps(New,indent=2,ensure_ascii=False))
+    # os.system("python reply.py")
     exit()
