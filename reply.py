@@ -18,7 +18,7 @@ if __name__ == '__main__':
                 for link in NewData[uid]['bili'].keys():
                     summary = NewData[uid]['bili'][link]
 #                    if '管家代转' not in summary and '运营代转' not in summary :
-                    msg = msg + idict[uid] +':' + summary +'\n\n'
+                    msg = msg + idict[uid] +'\n' + summary +'\n\n'
                     # qqmsg = qqmsg+pure_dict[uid] + ': \n'
                     # tempmsg = re.sub(r'\[img\].+?\[/img\]','',summary)
                     # tempmsg = re.sub(r'\[.+?\]','',tempmsg)
@@ -31,7 +31,7 @@ if __name__ == '__main__':
             if name == 'douyin':
                 for link in NewData[uid]['douyin'].keys():
                     summary = NewData[uid]['douyin'][link]
-                    msg = msg + idict[uid] +':'+ summary +'\n\n'
+                    msg = msg + idict[uid] + summary +'\n\n'
                     # qqmsg.append({"type":"Plain", "text":pure_dict[uid]})
                     # qqmsg.append({"type":"Plain", "text":str(link)})
                     # tempmsg = re.sub(r'\[.+?\]','',summary)

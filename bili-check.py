@@ -33,25 +33,29 @@ def extract_msg(node):
     match node['type']:
         case "DYNAMIC_TYPE_AV":
             major = node['modules']['module_dynamic']['major']
-            result = '[b]发布视频[/b][/url]：\n[b]' + major['archive']['title'] + '[/b]\n' + major['archive']['desc']
+            url = 'https:'+ major['archive']['jump_url']
+            result = '[b][url=' +url +']发布视频[/b][/url]：\n[b]' + major['archive']['title'] + '[/b]\n' + major['archive']['desc']
         case "DYNAMIC_TYPE_FORWARD":
-            result = '[b]'+ node['modules']['module_dynamic']['desc']['text'] +'[/b][/url]：' + '\n[quote]'
+            url = 'https://t.bilibili.com/'+node['id_str']
+            result = '[b][url=' +url +']转发动态[/b][/url]：\n'+ node['modules']['module_dynamic']['desc']['text'] + '\n[quote]'
             origin = node['orig']
             result = result + extract_msg(node['orig']) +'[/quote]'
         case "DYNAMIC_TYPE_WORD":
             major = node['modules']['module_dynamic']['major']['opus']
+            url = 'https:'+major['jump_url']
             if major['title']:
-                title = major['title']
+                title = major['title']+ '[/b]\n'
             else:
-                title = ''
-            result = '[b]发布动态[/b][/url]：\n' + title + '\n' + major['summary']['text']
+                title = '[/b]'
+            result = '[b][url=' +url +']发布动态[/b][/url]：\n[b]' + title +  major['summary']['text']
         case "DYNAMIC_TYPE_DRAW":
             major = node['modules']['module_dynamic']['major']['opus']
+            url = 'https:'+major['jump_url']
             if major['title']:
-                title = major['title']
+                title = major['title']+ '[/b]\n'
             else:
-                title = ''
-            result = '[b]发布带图动态[/b][/url]：\n[b]' + title + '[/b]\n' + major['summary']['text']
+                title = '[/b]'
+            result = '[b][url=' +url +']发布带图动态[/b][/url]：\n[b]' + title  + major['summary']['text']
     return result
 
 async def get_bili(uid,dynamics):
@@ -59,7 +63,7 @@ async def get_bili(uid,dynamics):
     u = ba.user.User(int(uid))
     offset = ""
     page = await u.get_dynamics_new(offset)
-    if (uid == '3537115310721181'):
+    if (uid == '703007996'):
         with open ('./test.json',"w",encoding='utf-8') as f:
             f.write(json.dumps(page,indent=2,ensure_ascii=False))
         #if time.strftime("%H:%M", time.localtime()) in ['18:50','20:00','21:10']:
@@ -87,7 +91,7 @@ async def get_bili(uid,dynamics):
             print(link+'-')
             RssData[uid]['bili'][link] = summary
             if summary not in cached_rss:
-                New[uid]['bili'][link]= '[url='+link+']'+ summary 
+                New[uid]['bili'][link]= '[url='+link+']▶[/url]' + summary  
 
 async def main():
     tasks = []
@@ -115,5 +119,5 @@ if __name__ == '__main__':
         f.write(json.dumps(New,indent=2,ensure_ascii=False))
     # with open ('./Live.json',"w",encoding='utf-8') as f:
     #     f.write(json.dumps(LiveData,indent=2,ensure_ascii=False))
-    # os.system("python reply.py")
+    os.system("python reply.py")
     exit()
