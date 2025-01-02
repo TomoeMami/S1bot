@@ -58,7 +58,7 @@ def extract_msg(node):
             result = '[b][url=' +url +']发布带图动态[/b][/url]：\n[b]' + title  + major['summary']['text']
         case "DYNAMIC_TYPE_LIVE_RCMD":
             url = 'https://t.bilibili.com/'+node['id_str']
-            result = '[b][url=' +url +']开始直播了[/b][/url]：\n这是一条直播开始动态\n[quote]'
+            result = '[b][url=' +url +']开始直播了[/b][/url]：\n[quote]这是一条直播开始动态\n[/quote]'
     return result
 
 async def get_bili(uid,dynamics):
