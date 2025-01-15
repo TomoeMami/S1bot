@@ -242,7 +242,7 @@
         },
         "module_stat": {
           "comment": {
-            "count": 181,
+            "count": 184,
             "forbidden": false
           },
           "forward": {
@@ -250,7 +250,7 @@
             "forbidden": false
           },
           "like": {
-            "count": 1320,
+            "count": 1328,
             "forbidden": false,
             "status": false
           }
@@ -260,6 +260,548 @@
         }
       },
       "type": "DYNAMIC_TYPE_WORD",
+      "visible": true
+    },
+    {
+      "basic": {
+        "comment_id_str": "1022617715895959559",
+        "comment_type": 17,
+        "like_icon": {
+          "action_url": "",
+          "end_url": "",
+          "id": 0,
+          "start_url": ""
+        },
+        "rid_str": "1022617715895959559"
+      },
+      "id_str": "1022617715895959559",
+      "modules": {
+        "module_author": {
+          "avatar": {
+            "container_size": {
+              "height": 1.35,
+              "width": 1.35
+            },
+            "fallback_layers": {
+              "is_critical_group": true,
+              "layers": [
+                {
+                  "general_spec": {
+                    "pos_spec": {
+                      "axis_x": 0.675,
+                      "axis_y": 0.675,
+                      "coordinate_pos": 2
+                    },
+                    "render_spec": {
+                      "opacity": 1
+                    },
+                    "size_spec": {
+                      "height": 1,
+                      "width": 1
+                    }
+                  },
+                  "layer_config": {
+                    "is_critical": true,
+                    "tags": {
+                      "AVATAR_LAYER": {},
+                      "GENERAL_CFG": {
+                        "config_type": 1,
+                        "general_config": {
+                          "web_css_style": {
+                            "borderRadius": "50%"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "resource": {
+                    "res_image": {
+                      "image_src": {
+                        "placeholder": 6,
+                        "remote": {
+                          "bfs_style": "widget-layer-avatar",
+                          "url": "https://i2.hdslb.com/bfs/face/3f758e887211df06b3d1f2c8d68e6997d76f6128.jpg"
+                        },
+                        "src_type": 1
+                      }
+                    },
+                    "res_type": 3
+                  },
+                  "visible": true
+                },
+                {
+                  "general_spec": {
+                    "pos_spec": {
+                      "axis_x": 0.8000000000000002,
+                      "axis_y": 0.8000000000000002,
+                      "coordinate_pos": 1
+                    },
+                    "render_spec": {
+                      "opacity": 1
+                    },
+                    "size_spec": {
+                      "height": 0.41666666666666663,
+                      "width": 0.41666666666666663
+                    }
+                  },
+                  "layer_config": {
+                    "tags": {
+                      "GENERAL_CFG": {
+                        "config_type": 1,
+                        "general_config": {
+                          "web_css_style": {
+                            "background-color": "rgb(255,255,255)",
+                            "border": "2px solid rgba(255,255,255,1)",
+                            "borderRadius": "50%",
+                            "boxSizing": "border-box"
+                          }
+                        }
+                      },
+                      "ICON_LAYER": {}
+                    }
+                  },
+                  "resource": {
+                    "res_image": {
+                      "image_src": {
+                        "local": 3,
+                        "src_type": 2
+                      }
+                    },
+                    "res_type": 3
+                  },
+                  "visible": true
+                }
+              ]
+            },
+            "mid": "703007996"
+          },
+          "decorate": {
+            "card_url": "https://i0.hdslb.com/bfs/garb/e7f8cd49a65e84c1eeffa56f2c0fe88efae0cf72.png",
+            "fan": {
+              "color": "#FC966E",
+              "color_format": {
+                "colors": [
+                  "#FC966EFF",
+                  "#FC966EFF"
+                ],
+                "end_point": "0,100",
+                "gradients": [
+                  0,
+                  100
+                ],
+                "start_point": "0,0"
+              },
+              "is_fan": true,
+              "num_prefix": "NO.",
+              "num_str": "000001",
+              "number": 1
+            },
+            "id": 1700024363001,
+            "jump_url": "https://www.bilibili.com/h5/mall/equity-link/collect-home?item_id=1700024363001&isdiy=0&part=card&from=post&f_source=garb&vmid=703007996&native.theme=1&navhide=1",
+            "name": "阿草和TA的朋友们粉丝",
+            "type": 3
+          },
+          "face": "https://i2.hdslb.com/bfs/face/3f758e887211df06b3d1f2c8d68e6997d76f6128.jpg",
+          "face_nft": false,
+          "following": null,
+          "jump_url": "//space.bilibili.com/703007996/dynamic",
+          "label": "",
+          "mid": 703007996,
+          "name": "A-SOUL_Official",
+          "official_verify": {
+            "desc": "",
+            "type": 0
+          },
+          "pendant": {
+            "expire": 0,
+            "image": "",
+            "image_enhance": "",
+            "image_enhance_frame": "",
+            "n_pid": 0,
+            "name": "",
+            "pid": 0
+          },
+          "pub_action": "",
+          "pub_location_text": "",
+          "pub_time": "昨天 17:59",
+          "pub_ts": 1736935141,
+          "type": "AUTHOR_TYPE_NORMAL",
+          "vip": {
+            "avatar_subscript": 1,
+            "avatar_subscript_url": "",
+            "due_date": 1738512000000,
+            "label": {
+              "bg_color": "#FB7299",
+              "bg_style": 1,
+              "border_color": "",
+              "img_label_uri_hans": "",
+              "img_label_uri_hans_static": "https://i0.hdslb.com/bfs/vip/8d4f8bfc713826a5412a0a27eaaac4d6b9ede1d9.png",
+              "img_label_uri_hant": "",
+              "img_label_uri_hant_static": "https://i0.hdslb.com/bfs/activity-plat/static/20220614/e369244d0b14644f5e1a06431e22a4d5/VEW8fCC0hg.png",
+              "label_theme": "annual_vip",
+              "path": "",
+              "text": "年度大会员",
+              "text_color": "#FFFFFF",
+              "use_img_label": true
+            },
+            "nickname_color": "#FB7299",
+            "status": 1,
+            "theme_type": 0,
+            "type": 2
+          }
+        },
+        "module_dynamic": {
+          "additional": null,
+          "desc": {
+            "rich_text_nodes": [
+              {
+                "orig_text": "今天19:30，是在",
+                "text": "今天19:30，是在",
+                "type": "RICH_TEXT_NODE_TYPE_TEXT"
+              },
+              {
+                "orig_text": "@嘉然今天吃什么 ",
+                "rid": "672328094",
+                "text": "@嘉然今天吃什么 ",
+                "type": "RICH_TEXT_NODE_TYPE_AT"
+              },
+              {
+                "orig_text": "的直播间哦~→",
+                "text": "的直播间哦~→",
+                "type": "RICH_TEXT_NODE_TYPE_TEXT"
+              },
+              {
+                "jump_url": "https://live.bilibili.com/22637261",
+                "orig_text": "https://live.bilibili.com/22637261",
+                "style": {
+                  "font_level": "regular",
+                  "font_size": 17
+                },
+                "text": "网页链接",
+                "type": "RICH_TEXT_NODE_TYPE_WEB"
+              },
+              {
+                "orig_text": "\n今天21:00，是在",
+                "text": "\n今天21:00，是在",
+                "type": "RICH_TEXT_NODE_TYPE_TEXT"
+              },
+              {
+                "orig_text": "@贝拉kira ",
+                "rid": "672353429",
+                "text": "@贝拉kira ",
+                "type": "RICH_TEXT_NODE_TYPE_AT"
+              },
+              {
+                "orig_text": "的直播间哦~→",
+                "text": "的直播间哦~→",
+                "type": "RICH_TEXT_NODE_TYPE_TEXT"
+              },
+              {
+                "jump_url": "https://live.bilibili.com/22632424",
+                "orig_text": "https://live.bilibili.com/22632424",
+                "style": {
+                  "font_level": "regular",
+                  "font_size": 17
+                },
+                "text": "网页链接",
+                "type": "RICH_TEXT_NODE_TYPE_WEB"
+              }
+            ],
+            "text": "今天19:30，是在@嘉然今天吃什么 的直播间哦~→https://live.bilibili.com/22637261\n今天21:00，是在@贝拉kira 的直播间哦~→https://live.bilibili.com/22632424"
+          },
+          "major": null,
+          "topic": null
+        },
+        "module_more": {
+          "three_point_items": [
+            {
+              "label": "举报",
+              "type": "THREE_POINT_REPORT"
+            }
+          ]
+        },
+        "module_stat": {
+          "comment": {
+            "count": 278,
+            "forbidden": false
+          },
+          "forward": {
+            "count": 2,
+            "forbidden": false
+          },
+          "like": {
+            "count": 514,
+            "forbidden": false,
+            "status": false
+          }
+        }
+      },
+      "orig": {
+        "basic": {
+          "comment_id_str": "",
+          "comment_type": 0,
+          "jump_url": "//www.bilibili.com/opus/1021787979773902864",
+          "like_icon": {
+            "action_url": "",
+            "end_url": "",
+            "id": 0,
+            "start_url": ""
+          },
+          "rid_str": ""
+        },
+        "id_str": "1021787979773902864",
+        "modules": {
+          "module_author": {
+            "avatar": {
+              "container_size": {
+                "height": 1.35,
+                "width": 1.35
+              },
+              "fallback_layers": {
+                "is_critical_group": true,
+                "layers": [
+                  {
+                    "general_spec": {
+                      "pos_spec": {
+                        "axis_x": 0.675,
+                        "axis_y": 0.675,
+                        "coordinate_pos": 2
+                      },
+                      "render_spec": {
+                        "opacity": 1
+                      },
+                      "size_spec": {
+                        "height": 1,
+                        "width": 1
+                      }
+                    },
+                    "layer_config": {
+                      "is_critical": true,
+                      "tags": {
+                        "AVATAR_LAYER": {},
+                        "GENERAL_CFG": {
+                          "config_type": 1,
+                          "general_config": {
+                            "web_css_style": {
+                              "borderRadius": "50%"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "resource": {
+                      "res_image": {
+                        "image_src": {
+                          "placeholder": 6,
+                          "remote": {
+                            "bfs_style": "widget-layer-avatar",
+                            "url": "https://i2.hdslb.com/bfs/face/3f758e887211df06b3d1f2c8d68e6997d76f6128.jpg"
+                          },
+                          "src_type": 1
+                        }
+                      },
+                      "res_type": 3
+                    },
+                    "visible": true
+                  },
+                  {
+                    "general_spec": {
+                      "pos_spec": {
+                        "axis_x": 0.8000000000000002,
+                        "axis_y": 0.8000000000000002,
+                        "coordinate_pos": 1
+                      },
+                      "render_spec": {
+                        "opacity": 1
+                      },
+                      "size_spec": {
+                        "height": 0.41666666666666663,
+                        "width": 0.41666666666666663
+                      }
+                    },
+                    "layer_config": {
+                      "tags": {
+                        "GENERAL_CFG": {
+                          "config_type": 1,
+                          "general_config": {
+                            "web_css_style": {
+                              "background-color": "rgb(255,255,255)",
+                              "border": "2px solid rgba(255,255,255,1)",
+                              "borderRadius": "50%",
+                              "boxSizing": "border-box"
+                            }
+                          }
+                        },
+                        "ICON_LAYER": {}
+                      }
+                    },
+                    "resource": {
+                      "res_image": {
+                        "image_src": {
+                          "local": 3,
+                          "src_type": 2
+                        }
+                      },
+                      "res_type": 3
+                    },
+                    "visible": true
+                  }
+                ]
+              },
+              "mid": "703007996"
+            },
+            "decorate": {
+              "card_url": "https://i0.hdslb.com/bfs/garb/e7f8cd49a65e84c1eeffa56f2c0fe88efae0cf72.png",
+              "fan": {
+                "color": "#FC966E",
+                "color_format": {
+                  "colors": [
+                    "#FC966EFF",
+                    "#FC966EFF"
+                  ],
+                  "end_point": "0,100",
+                  "gradients": [
+                    0,
+                    100
+                  ],
+                  "start_point": "0,0"
+                },
+                "is_fan": true,
+                "num_prefix": "NO.",
+                "num_str": "000001",
+                "number": 1
+              },
+              "id": 1700024363001,
+              "jump_url": "https://www.bilibili.com/h5/mall/equity-link/collect-home?item_id=1700024363001&isdiy=0&part=card&from=post&f_source=garb&vmid=703007996&native.theme=1&navhide=1",
+              "name": "阿草和TA的朋友们粉丝",
+              "type": 3
+            },
+            "face": "https://i2.hdslb.com/bfs/face/3f758e887211df06b3d1f2c8d68e6997d76f6128.jpg",
+            "face_nft": false,
+            "following": null,
+            "jump_url": "//space.bilibili.com/703007996/dynamic",
+            "label": "",
+            "mid": 703007996,
+            "name": "A-SOUL_Official",
+            "official_verify": {
+              "desc": "",
+              "type": 0
+            },
+            "pendant": {
+              "expire": 0,
+              "image": "",
+              "image_enhance": "",
+              "image_enhance_frame": "",
+              "n_pid": 0,
+              "name": "",
+              "pid": 0
+            },
+            "pub_action": "",
+            "pub_time": "",
+            "pub_ts": 1736741953,
+            "type": "AUTHOR_TYPE_NORMAL",
+            "vip": {
+              "avatar_subscript": 1,
+              "avatar_subscript_url": "",
+              "due_date": 1738512000000,
+              "label": {
+                "bg_color": "#FB7299",
+                "bg_style": 1,
+                "border_color": "",
+                "img_label_uri_hans": "",
+                "img_label_uri_hans_static": "https://i0.hdslb.com/bfs/vip/8d4f8bfc713826a5412a0a27eaaac4d6b9ede1d9.png",
+                "img_label_uri_hant": "",
+                "img_label_uri_hant_static": "https://i0.hdslb.com/bfs/activity-plat/static/20220614/e369244d0b14644f5e1a06431e22a4d5/VEW8fCC0hg.png",
+                "label_theme": "annual_vip",
+                "path": "",
+                "text": "年度大会员",
+                "text_color": "#FFFFFF",
+                "use_img_label": true
+              },
+              "nickname_color": "#FB7299",
+              "status": 1,
+              "theme_type": 0,
+              "type": 2
+            }
+          },
+          "module_dynamic": {
+            "additional": null,
+            "desc": null,
+            "major": {
+              "opus": {
+                "fold_action": [
+                  "展开",
+                  "收起"
+                ],
+                "jump_url": "//www.bilibili.com/opus/1021787979773902864",
+                "pics": [
+                  {
+                    "height": 2000,
+                    "live_url": null,
+                    "size": 3446.95,
+                    "url": "http://i0.hdslb.com/bfs/new_dyn/2fc899a1621483c726745fb5bfbbd4d0703007996.jpg",
+                    "width": 3000
+                  }
+                ],
+                "summary": {
+                  "rich_text_nodes": [
+                    {
+                      "orig_text": "Hello小伙伴们~01.13-01.19的日程表来咯~ \n\n01月16日20:00，【A-SOUL夜谈】是在",
+                      "text": "Hello小伙伴们~01.13-01.19的日程表来咯~ \n\n01月16日20:00，【A-SOUL夜谈】是在",
+                      "type": "RICH_TEXT_NODE_TYPE_TEXT"
+                    },
+                    {
+                      "orig_text": "@乃琳Queen ",
+                      "rid": "672342685",
+                      "text": "@乃琳Queen ",
+                      "type": "RICH_TEXT_NODE_TYPE_AT"
+                    },
+                    {
+                      "orig_text": "的直播间～\n01月17日20:00，【枝江综艺-认识的前辈】是在",
+                      "text": "的直播间～\n01月17日20:00，【枝江综艺-认识的前辈】是在",
+                      "type": "RICH_TEXT_NODE_TYPE_TEXT"
+                    },
+                    {
+                      "orig_text": "@思诺snow ",
+                      "rid": "3537115310721781",
+                      "text": "@思诺snow ",
+                      "type": "RICH_TEXT_NODE_TYPE_AT"
+                    },
+                    {
+                      "orig_text": "的直播间~\n\n",
+                      "text": "的直播间~\n\n",
+                      "type": "RICH_TEXT_NODE_TYPE_TEXT"
+                    },
+                    {
+                      "emoji": {
+                        "icon_url": "https://i0.hdslb.com/bfs/garb/c33cedecfc85c294f325d509698b9fd9176c4a13.png",
+                        "size": 2,
+                        "text": "[阿草和TA的朋友们_欢呼]",
+                        "type": 3
+                      },
+                      "orig_text": "[阿草和TA的朋友们_欢呼]",
+                      "text": "[阿草和TA的朋友们_欢呼]",
+                      "type": "RICH_TEXT_NODE_TYPE_EMOJI"
+                    },
+                    {
+                      "orig_text": "本周团播调整至周中进行，大家不要错过咯～",
+                      "text": "本周团播调整至周中进行，大家不要错过咯～",
+                      "type": "RICH_TEXT_NODE_TYPE_TEXT"
+                    }
+                  ],
+                  "text": "Hello小伙伴们~01.13-01.19的日程表来咯~ \n\n01月16日20:00，【A-SOUL夜谈】是在@乃琳Queen 的直播间～\n01月17日20:00，【枝江综艺-认识的前辈】是在@思诺snow 的直播间~\n\n[阿草和TA的朋友们_欢呼]本周团播调整至周中进行，大家不要错过咯～"
+                },
+                "title": null
+              },
+              "type": "MAJOR_TYPE_OPUS"
+            },
+            "topic": null
+          }
+        },
+        "type": "DYNAMIC_TYPE_DRAW",
+        "visible": true
+      },
+      "type": "DYNAMIC_TYPE_FORWARD",
       "visible": true
     },
     {
@@ -424,7 +966,7 @@
           },
           "pub_action": "",
           "pub_location_text": "",
-          "pub_time": "昨天 12:02",
+          "pub_time": "2天前",
           "pub_ts": 1736827342,
           "type": "AUTHOR_TYPE_NORMAL",
           "vip": {
@@ -503,15 +1045,15 @@
         },
         "module_stat": {
           "comment": {
-            "count": 3695,
+            "count": 5428,
             "forbidden": false
           },
           "forward": {
-            "count": 106,
+            "count": 142,
             "forbidden": false
           },
           "like": {
-            "count": 1036,
+            "count": 1102,
             "forbidden": false,
             "status": false
           }
@@ -682,7 +1224,7 @@
           },
           "pub_action": "",
           "pub_location_text": "",
-          "pub_time": "2天前",
+          "pub_time": "3天前",
           "pub_ts": 1736741953,
           "type": "AUTHOR_TYPE_NORMAL",
           "vip": {
@@ -792,15 +1334,15 @@
         },
         "module_stat": {
           "comment": {
-            "count": 180,
+            "count": 182,
             "forbidden": false
           },
           "forward": {
-            "count": 16,
+            "count": 22,
             "forbidden": false
           },
           "like": {
-            "count": 1085,
+            "count": 1101,
             "forbidden": false,
             "status": false
           }
@@ -970,7 +1512,7 @@
           },
           "pub_action": "投稿了视频",
           "pub_location_text": "",
-          "pub_time": "3天前",
+          "pub_time": "01月12日",
           "pub_ts": 1736654413,
           "type": "AUTHOR_TYPE_NORMAL",
           "vip": {
@@ -1017,7 +1559,7 @@
               "jump_url": "//www.bilibili.com/video/BV14HraYVEYt/",
               "stat": {
                 "danmaku": "18",
-                "play": "1.3万"
+                "play": "1.4万"
               },
               "title": "A-SOUL 2025年台历‘WONDERFUL U’即将发售🌸",
               "type": 1
@@ -1036,7 +1578,7 @@
         },
         "module_stat": {
           "comment": {
-            "count": 362,
+            "count": 365,
             "forbidden": false
           },
           "forward": {
@@ -1044,7 +1586,7 @@
             "forbidden": false
           },
           "like": {
-            "count": 2176,
+            "count": 2213,
             "forbidden": false,
             "status": false
           }
@@ -1291,11 +1833,11 @@
             "forbidden": false
           },
           "forward": {
-            "count": 5,
+            "count": 4,
             "forbidden": false
           },
           "like": {
-            "count": 818,
+            "count": 819,
             "forbidden": false,
             "status": false
           }
@@ -3112,7 +3654,7 @@
         },
         "module_stat": {
           "comment": {
-            "count": 158,
+            "count": 160,
             "forbidden": false
           },
           "forward": {
@@ -3620,7 +4162,7 @@
         },
         "module_stat": {
           "comment": {
-            "count": 331,
+            "count": 333,
             "forbidden": false
           },
           "forward": {
@@ -3628,7 +4170,7 @@
             "forbidden": false
           },
           "like": {
-            "count": 1213,
+            "count": 1212,
             "forbidden": false,
             "status": false
           }
@@ -3913,7 +4455,7 @@
             "forbidden": false
           },
           "forward": {
-            "count": 38,
+            "count": 37,
             "forbidden": false
           },
           "like": {
@@ -4441,458 +4983,9 @@
       },
       "type": "DYNAMIC_TYPE_FORWARD",
       "visible": true
-    },
-    {
-      "basic": {
-        "comment_id_str": "1018493877302067202",
-        "comment_type": 17,
-        "like_icon": {
-          "action_url": "",
-          "end_url": "",
-          "id": 0,
-          "start_url": ""
-        },
-        "rid_str": "1018493877302067202"
-      },
-      "id_str": "1018493877302067202",
-      "modules": {
-        "module_author": {
-          "avatar": {
-            "container_size": {
-              "height": 1.35,
-              "width": 1.35
-            },
-            "fallback_layers": {
-              "is_critical_group": true,
-              "layers": [
-                {
-                  "general_spec": {
-                    "pos_spec": {
-                      "axis_x": 0.675,
-                      "axis_y": 0.675,
-                      "coordinate_pos": 2
-                    },
-                    "render_spec": {
-                      "opacity": 1
-                    },
-                    "size_spec": {
-                      "height": 1,
-                      "width": 1
-                    }
-                  },
-                  "layer_config": {
-                    "is_critical": true,
-                    "tags": {
-                      "AVATAR_LAYER": {},
-                      "GENERAL_CFG": {
-                        "config_type": 1,
-                        "general_config": {
-                          "web_css_style": {
-                            "borderRadius": "50%"
-                          }
-                        }
-                      }
-                    }
-                  },
-                  "resource": {
-                    "res_image": {
-                      "image_src": {
-                        "placeholder": 6,
-                        "remote": {
-                          "bfs_style": "widget-layer-avatar",
-                          "url": "https://i2.hdslb.com/bfs/face/3f758e887211df06b3d1f2c8d68e6997d76f6128.jpg"
-                        },
-                        "src_type": 1
-                      }
-                    },
-                    "res_type": 3
-                  },
-                  "visible": true
-                },
-                {
-                  "general_spec": {
-                    "pos_spec": {
-                      "axis_x": 0.8000000000000002,
-                      "axis_y": 0.8000000000000002,
-                      "coordinate_pos": 1
-                    },
-                    "render_spec": {
-                      "opacity": 1
-                    },
-                    "size_spec": {
-                      "height": 0.41666666666666663,
-                      "width": 0.41666666666666663
-                    }
-                  },
-                  "layer_config": {
-                    "tags": {
-                      "GENERAL_CFG": {
-                        "config_type": 1,
-                        "general_config": {
-                          "web_css_style": {
-                            "background-color": "rgb(255,255,255)",
-                            "border": "2px solid rgba(255,255,255,1)",
-                            "borderRadius": "50%",
-                            "boxSizing": "border-box"
-                          }
-                        }
-                      },
-                      "ICON_LAYER": {}
-                    }
-                  },
-                  "resource": {
-                    "res_image": {
-                      "image_src": {
-                        "local": 3,
-                        "src_type": 2
-                      }
-                    },
-                    "res_type": 3
-                  },
-                  "visible": true
-                }
-              ]
-            },
-            "mid": "703007996"
-          },
-          "decorate": {
-            "card_url": "https://i0.hdslb.com/bfs/garb/e7f8cd49a65e84c1eeffa56f2c0fe88efae0cf72.png",
-            "fan": {
-              "color": "#FC966E",
-              "color_format": {
-                "colors": [
-                  "#FC966EFF",
-                  "#FC966EFF"
-                ],
-                "end_point": "0,100",
-                "gradients": [
-                  0,
-                  100
-                ],
-                "start_point": "0,0"
-              },
-              "is_fan": true,
-              "num_prefix": "NO.",
-              "num_str": "000001",
-              "number": 1
-            },
-            "id": 1700024363001,
-            "jump_url": "https://www.bilibili.com/h5/mall/equity-link/collect-home?item_id=1700024363001&isdiy=0&part=card&from=post&f_source=garb&vmid=703007996&native.theme=1&navhide=1",
-            "name": "阿草和TA的朋友们粉丝",
-            "type": 3
-          },
-          "face": "https://i2.hdslb.com/bfs/face/3f758e887211df06b3d1f2c8d68e6997d76f6128.jpg",
-          "face_nft": false,
-          "following": null,
-          "jump_url": "//space.bilibili.com/703007996/dynamic",
-          "label": "",
-          "mid": 703007996,
-          "name": "A-SOUL_Official",
-          "official_verify": {
-            "desc": "",
-            "type": 0
-          },
-          "pendant": {
-            "expire": 0,
-            "image": "",
-            "image_enhance": "",
-            "image_enhance_frame": "",
-            "n_pid": 0,
-            "name": "",
-            "pid": 0
-          },
-          "pub_action": "",
-          "pub_location_text": "",
-          "pub_time": "01月04日",
-          "pub_ts": 1735974985,
-          "type": "AUTHOR_TYPE_NORMAL",
-          "vip": {
-            "avatar_subscript": 1,
-            "avatar_subscript_url": "",
-            "due_date": 1738512000000,
-            "label": {
-              "bg_color": "#FB7299",
-              "bg_style": 1,
-              "border_color": "",
-              "img_label_uri_hans": "",
-              "img_label_uri_hans_static": "https://i0.hdslb.com/bfs/vip/8d4f8bfc713826a5412a0a27eaaac4d6b9ede1d9.png",
-              "img_label_uri_hant": "",
-              "img_label_uri_hant_static": "https://i0.hdslb.com/bfs/activity-plat/static/20220614/e369244d0b14644f5e1a06431e22a4d5/VEW8fCC0hg.png",
-              "label_theme": "annual_vip",
-              "path": "",
-              "text": "年度大会员",
-              "text_color": "#FFFFFF",
-              "use_img_label": true
-            },
-            "nickname_color": "#FB7299",
-            "status": 1,
-            "theme_type": 0,
-            "type": 2
-          }
-        },
-        "module_dynamic": {
-          "additional": null,
-          "desc": {
-            "rich_text_nodes": [
-              {
-                "orig_text": "📣2024下半年日常舰长礼的修改地址正在进行，1.7就要截止咯",
-                "text": "📣2024下半年日常舰长礼的修改地址正在进行，1.7就要截止咯",
-                "type": "RICH_TEXT_NODE_TYPE_TEXT"
-              }
-            ],
-            "text": "📣2024下半年日常舰长礼的修改地址正在进行，1.7就要截止咯"
-          },
-          "major": null,
-          "topic": null
-        },
-        "module_more": {
-          "three_point_items": [
-            {
-              "label": "举报",
-              "type": "THREE_POINT_REPORT"
-            }
-          ]
-        },
-        "module_stat": {
-          "comment": {
-            "count": 27,
-            "forbidden": false
-          },
-          "forward": {
-            "count": 2,
-            "forbidden": false
-          },
-          "like": {
-            "count": 667,
-            "forbidden": false,
-            "status": false
-          }
-        }
-      },
-      "orig": {
-        "basic": {
-          "comment_id_str": "",
-          "comment_type": 0,
-          "jump_url": "//www.bilibili.com/opus/1017330007700144135",
-          "like_icon": {
-            "action_url": "",
-            "end_url": "",
-            "id": 0,
-            "start_url": ""
-          },
-          "rid_str": ""
-        },
-        "id_str": "1017330007700144135",
-        "modules": {
-          "module_author": {
-            "avatar": {
-              "container_size": {
-                "height": 1.35,
-                "width": 1.35
-              },
-              "fallback_layers": {
-                "is_critical_group": true,
-                "layers": [
-                  {
-                    "general_spec": {
-                      "pos_spec": {
-                        "axis_x": 0.675,
-                        "axis_y": 0.675,
-                        "coordinate_pos": 2
-                      },
-                      "render_spec": {
-                        "opacity": 1
-                      },
-                      "size_spec": {
-                        "height": 1,
-                        "width": 1
-                      }
-                    },
-                    "layer_config": {
-                      "is_critical": true,
-                      "tags": {
-                        "AVATAR_LAYER": {},
-                        "GENERAL_CFG": {
-                          "config_type": 1,
-                          "general_config": {
-                            "web_css_style": {
-                              "borderRadius": "50%"
-                            }
-                          }
-                        }
-                      }
-                    },
-                    "resource": {
-                      "res_image": {
-                        "image_src": {
-                          "placeholder": 6,
-                          "remote": {
-                            "bfs_style": "widget-layer-avatar",
-                            "url": "https://i1.hdslb.com/bfs/face/b0146002e264f9930bad0557aa91fcff758df5c6.jpg"
-                          },
-                          "src_type": 1
-                        }
-                      },
-                      "res_type": 3
-                    },
-                    "visible": true
-                  },
-                  {
-                    "general_spec": {
-                      "pos_spec": {
-                        "axis_x": 0.8000000000000002,
-                        "axis_y": 0.8000000000000002,
-                        "coordinate_pos": 1
-                      },
-                      "render_spec": {
-                        "opacity": 1
-                      },
-                      "size_spec": {
-                        "height": 0.41666666666666663,
-                        "width": 0.41666666666666663
-                      }
-                    },
-                    "layer_config": {
-                      "tags": {
-                        "GENERAL_CFG": {
-                          "config_type": 1,
-                          "general_config": {
-                            "web_css_style": {
-                              "background-color": "rgb(255,255,255)",
-                              "border": "2px solid rgba(255,255,255,1)",
-                              "borderRadius": "50%",
-                              "boxSizing": "border-box"
-                            }
-                          }
-                        },
-                        "ICON_LAYER": {}
-                      }
-                    },
-                    "resource": {
-                      "res_image": {
-                        "image_src": {
-                          "local": 1,
-                          "src_type": 2
-                        }
-                      },
-                      "res_type": 3
-                    },
-                    "visible": true
-                  }
-                ]
-              },
-              "mid": "3493085336046382"
-            },
-            "decorate": {
-              "card_url": "https://i0.hdslb.com/bfs/garb/e7f8cd49a65e84c1eeffa56f2c0fe88efae0cf72.png",
-              "fan": {
-                "color": "#FC966E",
-                "color_format": {
-                  "colors": [
-                    "#FC966EFF",
-                    "#FC966EFF"
-                  ],
-                  "end_point": "0,100",
-                  "gradients": [
-                    0,
-                    100
-                  ],
-                  "start_point": "0,0"
-                },
-                "is_fan": true,
-                "num_prefix": "NO.",
-                "num_str": "000003",
-                "number": 3
-              },
-              "id": 1700024363001,
-              "jump_url": "https://www.bilibili.com/h5/mall/equity-link/collect-home?item_id=1700024363001&isdiy=0&part=card&from=post&f_source=garb&vmid=3493085336046382&native.theme=1&navhide=1",
-              "name": "阿草和TA的朋友们粉丝",
-              "type": 3
-            },
-            "face": "https://i1.hdslb.com/bfs/face/b0146002e264f9930bad0557aa91fcff758df5c6.jpg",
-            "face_nft": false,
-            "following": null,
-            "jump_url": "//space.bilibili.com/3493085336046382/dynamic",
-            "label": "",
-            "mid": 3493085336046382,
-            "name": "枝江娱乐官方",
-            "official_verify": {
-              "desc": "",
-              "type": -1
-            },
-            "pendant": {
-              "expire": 0,
-              "image": "",
-              "image_enhance": "",
-              "image_enhance_frame": "",
-              "n_pid": 0,
-              "name": "",
-              "pid": 0
-            },
-            "pub_action": "",
-            "pub_time": "",
-            "pub_ts": 1735704000,
-            "type": "AUTHOR_TYPE_NORMAL",
-            "vip": {
-              "avatar_subscript": 1,
-              "avatar_subscript_url": "",
-              "due_date": 1745337600000,
-              "label": {
-                "bg_color": "#FB7299",
-                "bg_style": 1,
-                "border_color": "",
-                "img_label_uri_hans": "",
-                "img_label_uri_hans_static": "https://i0.hdslb.com/bfs/vip/8d4f8bfc713826a5412a0a27eaaac4d6b9ede1d9.png",
-                "img_label_uri_hant": "",
-                "img_label_uri_hant_static": "https://i0.hdslb.com/bfs/activity-plat/static/20220614/e369244d0b14644f5e1a06431e22a4d5/VEW8fCC0hg.png",
-                "label_theme": "annual_vip",
-                "path": "",
-                "text": "年度大会员",
-                "text_color": "#FFFFFF",
-                "use_img_label": true
-              },
-              "nickname_color": "#FB7299",
-              "status": 1,
-              "theme_type": 0,
-              "type": 2
-            }
-          },
-          "module_dynamic": {
-            "additional": null,
-            "desc": null,
-            "major": {
-              "opus": {
-                "fold_action": [
-                  "展开",
-                  "收起"
-                ],
-                "jump_url": "//www.bilibili.com/opus/1017330007700144135",
-                "pics": [],
-                "summary": {
-                  "rich_text_nodes": [
-                    {
-                      "orig_text": "📢小伙伴们大家好！后台收到较多舰长礼物情况私信，在这里针对2024年部分舰长礼物进度向大家进行说明。\n   （1）2024年度A-SOUL、心宜思诺、银河商店来芙Laffey的下半年日常舰长礼物上舰活动已结束。请各位小伙伴自行检索7月1日-12月31日期间的上舰地址是否已完成填写。另外收件地址信息填写错误或者需要修改地址的小伙伴，请进入评论区置顶链接进行信息填写（2个月内的有效收货地址）。\n ❗️此表单仅针对【2024下半年度日常舰长礼物】的修改，修改期限自1月1日12:00至1月7日23:59，逾期将不再进行处理（请勿重复提交表单），小伙伴们请积极奔走相告哟！\n\n  （2）贝拉生日会舰长礼物均已完成发货，如有问题请小伙伴通过售后表单链接进行售后申请。\n\n （3）乃琳生日会舰长已陆续发货中，如1月15日后仍未收到舰长礼可进行售后表单的填写。黑胶仍在生产中，请总督及提督的小伙伴耐心等待。\n\n  （4）心宜生日会、心宜思诺周年部分舰长礼物正在打样阶段，待大货生产完成后将进行寄送地址的修改，届时将通过官方公告同步告知，请小伙伴持续关注枝江娱乐官方～\n\n   （5）2024年度多次上舰奖励将在1月陆续确认，新的年度上舰叠加奖励规则将通过官方动态发布，请小伙伴们耐心等待～\n\n  再次祝大家2025新年快乐！",
-                      "text": "📢小伙伴们大家好！后台收到较多舰长礼物情况私信，在这里针对2024年部分舰长礼物进度向大家进行说明。\n   （1）2024年度A-SOUL、心宜思诺、银河商店来芙Laffey的下半年日常舰长礼物上舰活动已结束。请各位小伙伴自行检索7月1日-12月31日期间的上舰地址是否已完成填写。另外收件地址信息填写错误或者需要修改地址的小伙伴，请进入评论区置顶链接进行信息填写（2个月内的有效收货地址）。\n ❗️此表单仅针对【2024下半年度日常舰长礼物】的修改，修改期限自1月1日12:00至1月7日23:59，逾期将不再进行处理（请勿重复提交表单），小伙伴们请积极奔走相告哟！\n\n  （2）贝拉生日会舰长礼物均已完成发货，如有问题请小伙伴通过售后表单链接进行售后申请。\n\n （3）乃琳生日会舰长已陆续发货中，如1月15日后仍未收到舰长礼可进行售后表单的填写。黑胶仍在生产中，请总督及提督的小伙伴耐心等待。\n\n  （4）心宜生日会、心宜思诺周年部分舰长礼物正在打样阶段，待大货生产完成后将进行寄送地址的修改，届时将通过官方公告同步告知，请小伙伴持续关注枝江娱乐官方～\n\n   （5）2024年度多次上舰奖励将在1月陆续确认，新的年度上舰叠加奖励规则将通过官方动态发布，请小伙伴们耐心等待～\n\n  再次祝大家2025新年快乐！",
-                      "type": "RICH_TEXT_NODE_TYPE_TEXT"
-                    }
-                  ],
-                  "text": "📢小伙伴们大家好！后台收到较多舰长礼物情况私信，在这里针对2024年部分舰长礼物进度向大家进行说明。\n   （1）2024年度A-SOUL、心宜思诺、银河商店来芙Laffey的下半年日常舰长礼物上舰活动已结束。请各位小伙伴自行检索7月1日-12月31日期间的上舰地址是否已完成填写。另外收件地址信息填写错误或者需要修改地址的小伙伴，请进入评论区置顶链接进行信息填写（2个月内的有效收货地址）。\n ❗️此表单仅针对【2024下半年度日常舰长礼物】的修改，修改期限自1月1日12:00至1月7日23:59，逾期将不再进行处理（请勿重复提交表单），小伙伴们请积极奔走相告哟！\n\n  （2）贝拉生日会舰长礼物均已完成发货，如有问题请小伙伴通过售后表单链接进行售后申请。\n\n （3）乃琳生日会舰长已陆续发货中，如1月15日后仍未收到舰长礼可进行售后表单的填写。黑胶仍在生产中，请总督及提督的小伙伴耐心等待。\n\n  （4）心宜生日会、心宜思诺周年部分舰长礼物正在打样阶段，待大货生产完成后将进行寄送地址的修改，届时将通过官方公告同步告知，请小伙伴持续关注枝江娱乐官方～\n\n   （5）2024年度多次上舰奖励将在1月陆续确认，新的年度上舰叠加奖励规则将通过官方动态发布，请小伙伴们耐心等待～\n\n  再次祝大家2025新年快乐！"
-                },
-                "title": null
-              },
-              "type": "MAJOR_TYPE_OPUS"
-            },
-            "topic": null
-          }
-        },
-        "type": "DYNAMIC_TYPE_WORD",
-        "visible": true
-      },
-      "type": "DYNAMIC_TYPE_FORWARD",
-      "visible": true
     }
   ],
-  "offset": "1018493877302067202",
+  "offset": "1018536500522909703",
   "update_baseline": "",
   "update_num": 0
 }
