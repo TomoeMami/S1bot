@@ -56,7 +56,7 @@ if __name__ == '__main__':
             # 设置请求头
             headers = {'User-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36 Edg/92.0.902.78'}
             ''' 获取formhash'''
-            RURL = 'https://stage1st.com/2b/forum.php?mod=viewthread&tid=334540&extra=page%3D1'
+            RURL = 'https://stage1st.com/2b/forum.php?mod=viewthread&fid=6&tid=751272&extra=page%3D1'
             s1 = requests.get(RURL, headers=headers,  cookies=cookies)
             content = s1.content
             rows = re.findall(r'<input type=\"hidden\" name=\"formhash\" value=\"(.*?)\" />', str(content)) #正则匹配找到formhash值
