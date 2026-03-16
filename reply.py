@@ -1,45 +1,39 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
-
 import re, time,requests,io,sys,json,os
+import feedparser as fp
+
+def rep_content(input):
+    output = re.sub(r'<br />','\n',input)
+    output = re.sub(r'<.+?>','',output)
+    return output
 
 username = 'riko'
+
+idlist= ['672346917','703007996','672353429','672342685','351609538','672328094','3493082517474232','3493085336046382','3537115310721181','3537115310721781','3546730823944886']
+
+New = {"672342685":{},"703007996":{},"672353429":{},"351609538":{},"672346917":{},"672328094":{},"3493082517474232":{},"3493085336046382":{},"3537115310721181":{},"3537115310721781":{},"3546730823944886":{}}
 
 idict = {'672346917':'[b][color=#9Ac8E2]向晚大魔王[/color][/b]','703007996':'[b][color=#689D6A]A-SOUL_Official[/color][/b]','672353429':'[b][color=#DB7D74]贝拉kira[/color][/b]','672342685':'[b][color=#576690]乃琳Queen[/color][/b]','351609538':'[b][color=#B8A6D9]珈乐Carol[/color][/b]','672328094':'[b][color=#E799B0]嘉然今天吃什么[/color][/b]','3493082517474232':'[b][color=#3c3836]枝江娱乐的小黑[/color][/b]','3493085336046382':'[b][color=#282828]枝江娱乐官方[/color][/b]','3537115310721181':'[b][color=#c83872]心宜不是心仪[/color][/b]','3537115310721781':'[b][color=#7253c2]思诺snow[/color][/b]','3546730823944886':'[b][color=#fcdbdf]来芙Laffey[/color][/b]'}
 
 if __name__ == '__main__':
     msg = u''
-    qqmsg = u''
-    with open ('./New.json',"r",encoding='utf-8') as f:
-        NewData = json.load(f)
-    for uid in NewData.keys():
-        for name in NewData[uid].keys():
-            if name == 'bili':
-                for link in NewData[uid]['bili'].keys():
-                    summary = NewData[uid]['bili'][link]
-#                    if '管家代转' not in summary and '运营代转' not in summary :
-                    msg = msg + idict[uid] +'\n' + summary +'\n\n'
-                    # qqmsg = qqmsg+pure_dict[uid] + ': \n'
-                    # tempmsg = re.sub(r'\[img\].+?\[/img\]','',summary)
-                    # tempmsg = re.sub(r'\[.+?\]','',tempmsg)
-                    # qqmsg = qqmsg + tempmsg + '\n'
-                    # qqmsg = qqmsg + str(link)+'\n'
-                    # qqmsg_img = re.findall(r'\[img\](.*?)\[/img\]',summary)
-                    # if(len(qqmsg_img)!=0):
-                    #     for i in qqmsg_img:
-                    #         qqmsg = qqmsg + '[CQ:image,file='+str(i)+',type=show,id=40000]\n'
-            if name == 'douyin':
-                for link in NewData[uid]['douyin'].keys():
-                    summary = NewData[uid]['douyin'][link]
-                    msg = msg + idict[uid] + summary +'\n\n'
-                    # qqmsg.append({"type":"Plain", "text":pure_dict[uid]})
-                    # qqmsg.append({"type":"Plain", "text":str(link)})
-                    # tempmsg = re.sub(r'\[.+?\]','',summary)
-                    # qqmsg.append({"type":"Plain", "text":str(tempmsg)})
-                    # qqmsg_img = re.findall(r'\[img\](.*?)\[/img\]',summary)
-                    # if(len(qqmsg_img)!=0):
-                    #     for i in qqmsg_img:
-                    #         qqmsg.append({"type":"Image", "url":str(i)})
+    with open ('./Rss.json',"r",encoding='utf-8') as f:
+        RssData = json.load(f)
+    temp_rss = []
+    for i in RssData.values():
+        temp_rss = temp_rss + list(i.keys())
+    cached_rss = set(temp_rss)
+    for id in idlist:
+        feed = fp.parse('http://127.0.0.1:1200/bilibili/user/dynamic/'+id)
+        for entry in feed.entries:
+            if not entry.link in cached_rss:
+                RssData[id][entry.link] = idict[id] + '[b][url=' + entry.link +']发布动态[/b][/url]：\n[b]>' + entry.title + '[/b]\n' + rep_content(entry.description) + '\n\n'
+                msg = msg + RssData[id][entry.link]
+    with open ('./Rss.json',"w",encoding='utf-8') as f:
+        f.write(json.dumps(RssData,indent=2,ensure_ascii=False))
+    print(msg)
+    msg = False
     if msg:
         while 1:
             sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='utf8') #改变标准输出的默认编码
@@ -74,17 +68,6 @@ if __name__ == '__main__':
                 Data = {'formhash': formhash,'message': msg,'subject': subject,'posttime':int(time.time()),'wysiwyg':1,'usesig':1}
                 req = requests.post(replyurl,data=Data,headers=headers,cookies=cookies)
                 print(req)
-                # qqurl = 'http://127.0.0.1:7890/send_group_msg'
-                # qqdata = {
-                #     "group_id":822519722,
-                #     "message":qqmsg
-                # }
-                # qqreq = requests.post(qqurl,json=qqdata)
-                # print(qqreq)
-                New = {}
-                with open ('./New.json',"w",encoding='utf-8') as f:
-                    f.write(json.dumps(New,indent=2,ensure_ascii=False))
-                #os.system("./push.sh")
                 break
             else:
                 print('none formhash!')
