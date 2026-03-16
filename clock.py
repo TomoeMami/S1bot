@@ -4,19 +4,8 @@ import os
 # def run_child():
 #     os.system('python check.py')
 
-
-def run_parent():
-    count = 0
-    while True:
-        os.system('python bili-check.py')
-        count = count + 1
-        # if(count == 8):
-        #     os.system('python dy-check.py')
-        #     count = 0
-        sleep(600)
-
 if __name__ == '__main__':
     while True:
-        os.system('python bili-check.py')
-        sleep(300)
+        os.system('python reply.py')
+        sleep(60)
 
