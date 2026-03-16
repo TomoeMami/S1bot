@@ -28,12 +28,12 @@ if __name__ == '__main__':
         feed = fp.parse('http://127.0.0.1:1200/bilibili/user/dynamic/'+id)
         for entry in feed.entries:
             if not entry.link in cached_rss:
-                RssData[id][entry.link] = idict[id] + '[b][url=' + entry.link +']发布动态[/b][/url]：\n[b]>' + entry.title + '[/b]\n' + rep_content(entry.description) + '\n\n'
+                RssData[id][entry.link] = idict[id] + '[b][url=' + entry.link +']发布动态[/b][/url]：\n[quote]'+ rep_content(entry.description) + '[/quote]\n\n'
                 msg = msg + RssData[id][entry.link]
     with open ('./Rss.json',"w",encoding='utf-8') as f:
         f.write(json.dumps(RssData,indent=2,ensure_ascii=False))
     print(msg)
-    msg = False
+    # msg = False
     if msg:
         while 1:
             sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='utf8') #改变标准输出的默认编码
